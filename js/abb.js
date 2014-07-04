@@ -45,6 +45,7 @@ App = {
     arrow_interval: 600,
     access_token: "",
     api_token: "",
+    host: "https://www.allbestbets.ru",
     timezone_offset: function () {
         return (new Date()).getTimezoneOffset() * 60 * 1000;
     },
@@ -128,12 +129,12 @@ Routes = {
     });
 
     App.Models.Arb = Backbone.Model.extend({
-        urlRoot: '/api/v1/arbs',
+        urlRoot: App.host + '/api/v1/arbs',
 
         destroy: function (options) {
             var url,
                 _this = this;
-            url = "/api/v3/arbs/" + this.id + "/exclude?api_token=" + App.api_token + "&access_token=" + App.access_token;
+            url = App.host + "/api/v3/arbs/" + this.id + "/exclude?api_token=" + App.api_token + "&access_token=" + App.access_token;
             console.log(url);
 
             $.post(url, options, function (data) {
@@ -146,7 +147,7 @@ Routes = {
         },
 
         fetch_wrong_items: function (success) {
-            url = !App.is_live ? ("/api/v1/arbs/" + this.id + "/wrong") : ("/api/v1/arbs/live/" + this.id + "/wrong");
+            url = !App.is_live ? (App.host + "/api/v1/arbs/" + this.id + "/wrong") : (App.host + "/api/v1/arbs/live/" + this.id + "/wrong");
             console.log(url);
             $.get(url, {access_token: App.access_token}, function (data) {
                 success(data);
@@ -238,7 +239,7 @@ Routes = {
     });
 
     App.Collections.Arbs = Backbone.Collection.extend({
-        url: '/api/v1/arbs',
+        url: App.host + '/api/v1/arbs',
         model: App.Models.Arb,
 
         parse: function (response) {
@@ -313,7 +314,7 @@ Routes = {
         destroy: function () {
             var url,
                 _this = this;
-            url = "/api/v3/bets/" + this.id + "/exclude_arbs?api_token=" + App.api_token + "&access_token=" + App.access_token;
+            url = App.host + "/api/v3/bets/" + this.id + "/exclude_arbs?api_token=" + App.api_token + "&access_token=" + App.access_token;
             console.log(url);
             /*
              * $.post(url, {

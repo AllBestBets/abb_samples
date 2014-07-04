@@ -112,7 +112,7 @@ ArbView = Backbone.View.extend({
             //return false;
         }
         id = $(e.currentTarget).attr("event");
-        url = "/api/v3/events/" + id + "/exclude_arbs?api_token=" + App.api_token + "&access_token=" + App.access_token;
+        url = App.host + "/api/v3/events/" + id + "/exclude_arbs?api_token=" + App.api_token + "&access_token=" + App.access_token;
         console.log(url)
         /*
          * delete url
@@ -408,7 +408,7 @@ FilterView = Backbone.View.extend({
 
 var filter;
 
-$.ajax('/api/v1/directories').done(function (response, status_code) {
+$.ajax(App.host + '/api/v1/directories').done(function (response, status_code) {
     App.sports.reset(response.sports);
     App.bookmakers.reset(response.bookmakers);
     App.periods.reset(response.periods);

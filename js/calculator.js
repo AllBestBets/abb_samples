@@ -3,7 +3,7 @@ _.mixin(_.string.exports());
 
 var calculator;
 
-$.ajax('/api/v1/directories').done(function (response, status_code) {
+$.ajax(App.host + '/api/v1/directories').done(function (response, status_code) {
     App.arb_formulas.reset(response.arb_formulas);
     App.sports.reset(response.sports);
     App.bookmakers.reset(response.bookmakers);

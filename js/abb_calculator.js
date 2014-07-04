@@ -275,7 +275,7 @@ CalculatorView = Backbone.View.extend({
         }
         el = e.target;
         id = $(el).attr("event");
-        url = "/api/v3/events/" + id + "/exclude_arbs?api_token=" + App.api_token + "&access_token=" + App.access_token;
+        url = App.host + "/api/v3/events/" + id + "/exclude_arbs?api_token=" + App.api_token + "&access_token=" + App.access_token;
         console.log(url);
         /*$.post(url, {
          _method: "delete"
@@ -294,7 +294,7 @@ CalculatorView = Backbone.View.extend({
         }
         el = $(e.currentTarget);
         id = el.attr("bet");
-        url = "/api/v3/bets/" + id + "/exclude_arbs?api_token=" + App.api_token + "&access_token=" + App.access_token;
+        url = App.host + "/api/v3/bets/" + id + "/exclude_arbs?api_token=" + App.api_token + "&access_token=" + App.access_token;
         console.log(url);
         /*$.post(url, {
          _method: "delete"
@@ -558,7 +558,7 @@ CalculatorView = Backbone.View.extend({
             _this = this;
         el = e.target;
         sel = $(el).prev();
-        path = "/api/v1/bets/" + (sel.attr('id')) + "/same-pro" + (this.options.is_live ? '_live' : '') + "?access_token=" + this.options.access_token;
+        path = App.host + "/api/v1/bets/" + (sel.attr('id')) + "/same-pro" + (this.options.is_live ? '_live' : '') + "?access_token=" + this.options.access_token;
         return $.get(path).done(function (data) {
             return _this.same_bets_load(data, sel);
         });

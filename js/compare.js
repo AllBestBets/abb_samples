@@ -399,7 +399,7 @@ App.Views.Events = Backbone.View.extend({
         market = App.compare_controller.markets_view.market;
         period = App.compare_controller.markets_view.periods_view ? (App.compare_controller.markets_view.periods_view.values_view ? value = parseFloat(App.compare_controller.markets_view.periods_view.values_view.value) : void 0, App.compare_controller.markets_view.periods_view.period.get('identifier')) : 0;
         this.collection.each(function (event) {
-            return $.get("/api/v2/" + sport.name + "/events/" + event.id + "/markets/" + market.id + "/periods/" + period + "/bets", function (data) {
+            return $.get(App.host + "/api/v2/" + sport.name + "/events/" + event.id + "/markets/" + market.id + "/periods/" + period + "/bets", function (data) {
                 var event_outcomes, most_outcomes, percent;
                 if (data.sport.country) {
                     event_outcomes = data.sport.country.league.event.market.period.outcome;
@@ -495,7 +495,7 @@ CompareView = Backbone.View.extend({
         el = $(e.target);
         if ((sport_id = el.attr("sport_id"))) {
             this.sport = App.sports.get(sport_id);
-            this.leagues.url = "/api/v2/" + (this.sport.get('name')) + "/leagues";
+            this.leagues.url = App.host + "/api/v2/" + (this.sport.get('name')) + "/leagues";
         }
         if ((country_id = el.attr("country_id"))) {
             this.sport.country = this.countries.get(country_id);
@@ -548,11 +548,11 @@ CompareView = Backbone.View.extend({
         link = $(el);
         sport_id = $(el).attr("sport_id");
         this.sport = App.sports.get(sport_id);
-        this.leagues.url = "/api/v2/" + (this.sport.get('name')) + "/leagues";
+        this.leagues.url = App.host + "/api/v2/" + (this.sport.get('name')) + "/leagues";
 
         countries = link.parent().children('ul');
         if (countries.length == 0 && !link.hasClass('opened')) {
-            $.get("/api/v2/" + (this.sport.get('name')) + "/countries", function (data) {
+            $.get(App.host + "/api/v2/" + (this.sport.get('name')) + "/countries", function (data) {
                 _this.countries.reset(data.sport.country);
                 var countries_template = _.template($("#sidebar-countries-template").html());
                 countries = $(countries_template(data));
@@ -573,14 +573,14 @@ CompareView = Backbone.View.extend({
             _this = this;
         sport_id = $(el).attr("sport_id");
         this.sport = App.sports.get(sport_id);
-        this.leagues.url = "/api/v2/" + (this.sport.get('name')) + "/leagues";
-        $.get("/api/v2/" + (this.sport.get('name')) + "/countries", function (data) {
+        this.leagues.url = App.host + "/api/v2/" + (this.sport.get('name')) + "/leagues";
+        $.get(App.host + "/api/v2/" + (this.sport.get('name')) + "/countries", function (data) {
             _this.countries.reset(data.sport.country);
             if (callback == null) {
                 var sport_page = _.template($("#sport-template").html());
                 $("#content").html(sport_page(data));
                 _this.countries.each(function (c) {
-                    return $.get("/api/v2/" + (_this.sport.get('name')) + "/countries/" + c.id + "/leagues", function (data) {
+                    return $.get(App.host + "/api/v2/" + (_this.sport.get('name')) + "/countries/" + c.id + "/leagues", function (data) {
                         _this.leagues.add(data.sport.country.league);
                         var sport_leagues_page = _.template($("#sport-leagues-template").html());
                         return $("#country_" + c.id + " .sport_leagues").html(sport_leagues_page(data));
@@ -605,7 +605,7 @@ CompareView = Backbone.View.extend({
 
         leagues = link.parent().children('ul');
         if (leagues.length == 0 && !link.hasClass('opened')) {
-            $.get("/api/v2/" + ($(el).attr("sport")) + "/countries/" + ($(el).attr("country_id")) + "/leagues", function (data) {
+            $.get(App.host + "/api/v2/" + ($(el).attr("sport")) + "/countries/" + ($(el).attr("country_id")) + "/leagues", function (data) {
                 _this.leagues.add(data.sport.country.league);
                 var leagues_template = _.template($("#sidebar-leagues-template").html());
                 leagues = $(leagues_template(data));
@@ -630,7 +630,7 @@ CompareView = Backbone.View.extend({
         country_id = $(el).attr("country_id") || $.url().param('country_id');
         this.country = this.countries.get(country_id);
         this.sport.country = this.country;
-        $.get("/api/v2/" + (this.sport.get('name')) + "/countries/" + country_id + "/leagues", function (data) {
+        $.get(App.host + "/api/v2/" + (this.sport.get('name')) + "/countries/" + country_id + "/leagues", function (data) {
             _this.leagues.add(data.sport.country.league);
             if (callback == null) {
 
@@ -646,7 +646,7 @@ CompareView = Backbone.View.extend({
 
 var compare;
 
-$.ajax('/api/v1/directories').done(function (response, status_code) {
+$.ajax(App.host + '/api/v1/directories').done(function (response, status_code) {
     App.sports.reset(response.sports);
     App.bookmakers.reset(response.bookmakers);
     App.bet_variations.reset(response.bet_variations);
