@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset='utf-8'>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content=""/>
-    <meta name="author" content=""/>
+  <meta charset='utf-8'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
 
-    <link rel="shortcut icon" href="ico/favicon.png">
+  <link rel="shortcut icon" href="ico/favicon.png">
 
-    <title>AllBestBets | In bets we trust!</title>
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
-    <link href="css/sports.css" rel="stylesheet">
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="js/html5shiv.js"></script>
-    <script src="js/respond.min.js"></script>
-    <![endif]-->
-    <script src="js/jquery.js" type="text/javascript"></script>
-    <script src="js/i18n.js" type="text/javascript"></script>
-    <script src="js/translations.js" type="text/javascript"></script>
-    <script src="js/jquery.timeago.js" type="text/javascript"></script>
-    <script src="js/jquery.dateformat.js" type="text/javascript"></script>
-    <script src="js/jquery.timeago.en.js" type="text/javascript"></script>
-    <script src="js/jquery.timeago.ru.js" type="text/javascript"></script>
-    <script src="js/underscore.js" type="text/javascript"></script>
-    <script src="js/underscore.string.js" type="text/javascript"></script>
-    <script src="js/backbone.js" type="text/javascript"></script>
+  <title>AllBestBets | In bets we trust!</title>
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <link href="css/sports.css" rel="stylesheet">
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="js/html5shiv.js"></script>
+  <script src="js/respond.min.js"></script>
+  <![endif]-->
+  <script src="js/jquery.js" type="text/javascript"></script>
+  <script src="js/i18n.js" type="text/javascript"></script>
+  <script src="js/translations.js" type="text/javascript"></script>
+  <script src="js/jquery.timeago.js" type="text/javascript"></script>
+  <script src="js/jquery.dateformat.js" type="text/javascript"></script>
+  <script src="js/jquery.timeago.en.js" type="text/javascript"></script>
+  <script src="js/jquery.timeago.ru.js" type="text/javascript"></script>
+  <script src="js/underscore.js" type="text/javascript"></script>
+  <script src="js/underscore.string.js" type="text/javascript"></script>
+  <script src="js/backbone.js" type="text/javascript"></script>
 </head>
 <body>
 
@@ -60,8 +60,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#">Sign In</a></li>
             </ul>
-        </div>
-        <!--/.nav-collapse -->
+        </div><!--/.nav-collapse -->
     </div>
 </div>
 
@@ -70,441 +69,363 @@
 <!-- Container -->
 
 <div class="container">
-    <div class="alert alert-warning lead">To see surebets with profit more then 1% just sign up!</a> It's absolutely
-        FREE !
-        <button type="button" class="btn btn-warning pull-right">Sign up now!</button>
-    </div>
-    <div class="row">
-        <div class="col-md-2 filter">
-            <div id="filters" class="well well-sm">
+  <div class="alert alert-warning lead">To see surebets with profit more then 1% just sign up!</a> It's absolutely FREE !
+      <button type="button" class="btn btn-warning pull-right">Sign up now!</button>
+  </div>
+  <div class="row">
+    <div class="col-md-2 filter">
+      <div id="filters" class="well well-sm">
 
-            </div>
-        </div>
-        <div class="col-md-10 surebets">
-            <div id='header' class='row'>
-            </div>
-            <div id="arbs" class="row">
-                Loading...
-            </div>
-            <!--/row-->
-        </div>
-        <!--/span-->
+      </div>
     </div>
-    <!--/row-->
+    <div class="col-md-10 surebets">
+      <div id='header' class='row'>
+      </div>
+      <div id="arbs" class="row">
+        Loading...
+      </div><!--/row-->
+    </div><!--/span-->
+  </div><!--/row-->
 
 
-    <!-- Footer -->
-    <div class="footer">
-        <p>&copy; Company 2013</p>
-    </div>
-    <!-- /Footer -->
+  <!-- Footer -->
+  <div class="footer">
+      <p>&copy; Company 2013</p>
+  </div>
+  <!-- /Footer -->
 </div>
 <!-- /Container -->
 
 
-<script type='text/template' id='header-template'>
+  <script type='text/template' id='header-template'>
     <div class='btn-group'>
-        <a href="#" id='cancel-grouping' class="btn btn-success" style="display: none"
-           title='Cancel grouping by this event'>
-            Cancel grouping by this event
+      <a href="#" id='cancel-grouping' class="btn btn-success" style="display: none" title='Cancel grouping by this event'>
+        Cancel grouping by this event
             <%= I18n.t('global.Filter') %>
-        </a>
+      </a>
     </div>
 
     <div class="col-md-7 filter">
-        <h2><span id='stats_count'><%= App.stats.total %></span> surebets with <span id='stats_percent'><%= _("%.1f").sprintf(App.stats.max_percent || 0) + '%' %></span>
-            revenue</h2>
-
-        <p class="lead">Total found <span id='total_count'><%= params.total_arbs %></span> surebets with <span
-                id='max_percent'><%= _("%.1f").sprintf(params.max_percent || 0) + '%'%></span> revenue</p>
-        <small class="text-muted" id='last_update'></small>
+      <h2><span id='stats_count'><%= App.stats.total %></span> surebets with <span id='stats_percent'><%= _("%.1f").sprintf(App.stats.max_percent || 0) + '%' %></span> revenue</h2>
+      <p class="lead">Total found <span id='total_count'><%= params.total_arbs %></span> surebets with <span id='max_percent'><%= _("%.1f").sprintf(params.max_percent || 0) + '%'%></span> revenue</p>
+      <small class="text-muted" id='last_update'></small>
     </div>
     <div class="col-md-5 filter">
         <div class="btn-group pull-right" id='sort_by_tab'>
             <button type="button" class="btn btn-default" data-value='percent'><%= I18n.t('arb.Percent') %></button>
             <button type="button" class="btn btn-default" data-value='arb_age'><%= I18n.t('arb.Age') %></button>
-            <button type="button" class="btn btn-default" data-value='started_at'><%= I18n.t('event.Event time') %>
-            </button>
+            <button type="button" class="btn btn-default" data-value='started_at'><%= I18n.t('event.Event time') %></button>
             <button type="button" class="btn btn-default" data-value='roi'>ROI</button>
         </div>
     </div>
-</script>
-<script type='text/template' id='leftside-template'>
-<h4><%= I18n.t('global.Filter') %></h4>
-<form accept-charset='UTF-8' action="#" id="filter-form" method='post' class='form'>
-<input id="sort_by" name='sort_by' type='hidden' value='percent'>
-<input id='event_id' name='event_id' type='hidden'>
-<input name='is_live' type='hidden' value='0'>
-<input name='type' type='hidden' value='teaser'>
-<input name='countries' type='hidden' value='0'>
-<input id='date_shift' name='date_shift' type='hidden' value='10800'>
+  </script>
+  <script type='text/template' id='leftside-template'>
+    <h4><%= I18n.t('global.Filter') %></h4>
+    <form accept-charset='UTF-8' action="#" id="filter-form" method='post' class='form'>
+      <input id="sort_by" name='sort_by' type='hidden' value='percent'>
+      <input id='event_id' name='event_id' type='hidden'>
+      <input name='is_live' type='hidden' value='0'>
+      <input name='type' type='hidden' value='teaser'>
+      <input name='countries' type='hidden' value='0'>
+      <input id='date_shift' name='date_shift' type='hidden' value='10800'>
+      <div class="row">
+        <div class="checkbox"><label title='<%= I18n.t('arb.Auto Update Tip') %>'><input type="checkbox" id="auto_update" name="auto_update" value='true'> Auto Update</label></div>
+        <div class="checkbox"><label title='<%= I18n.t('arb.Play sound Tip') %>'><input type="checkbox" id="notification_sound" name="notification_sound" value='true'> Sound alerts</label></div>
+        <div class="checkbox"><label title='<%= I18n.t('arb.Group arbs Tip') %>'><input type="checkbox" id='grouped' name='grouped' value='false'><%= I18n.t('arb.Group arbs') %></label></div>
+        <div class="checkbox"><label title='<%= I18n.t('arb.Middle arbs tip') %>'><input type="checkbox" id='only_middles' name='only_middles' value='true'><%= I18n.t('arb.Middle arbs') %></label></div>
+        <div class="checkbox"><label title='<%= I18n.t('arb.Same Rules Hint') %>'><input type="checkbox" name="only_rules_group" value='true'> Same rules</label></div>
+        <div class="checkbox"><label title='<%= I18n.t('arb.Diff book hint') %>'><input type="checkbox" name="only_diff_book" value='true'> Diff. bookers</label></div>
+        <div class="checkbox"><label title='<%= I18n.t('arb.Hide decimals hint') %>'><input type="checkbox" name="hide_decimal_values" value='true'> Hide integers</label></div>
+      </div>
+      <span><strong><%= I18n.t('global.Profit') %></strong></span>
+      <div class="row">
+          <div class="col-md-6"><input type="text" class="form-control input-sm" name='min_profit' value='0' placeholder="0"></div>
+          <div class="col-md-6"><input type="text" class="form-control input-sm" name='max_profit' value='20' placeholder="20"></div>
+      </div>
+      <span class=""><strong><%= I18n.t('global.Bets') %></strong></span>
+      <div class="row">
+          <div class="col-md-6"><input type="text" class="form-control input-sm" name='min_koef'></div>
+          <div class="col-md-6"><input type="text" class="form-control input-sm" name='max_koef'></div>
+      </div>
+      <span class=""><strong><%= I18n.t('middle.Age') %></strong></span>
+      <div class="row">
+          <div class="col-md-6"><input type="text" class="form-control input-sm" name='min_age'></div>
+          <div class="col-md-6"><input type="text" class="form-control input-sm" name='max_age'></div>
+      </div>
+      <span class=""><strong>ROI</strong></span>
+      <div class="row">
+          <div class="col-md-6"><input type="text" class="form-control input-sm" name='min_roi'></div>
+          <div class="col-md-6"><input type="text" class="form-control input-sm" name='max_roi'></div>
+      </div>
+      <span class=""><strong><%= I18n.t('global.Middles') %></strong></span>
+      <div class="row">
+          <div class="col-md-6"><input type="text" class="form-control input-sm" name='min_middle_value'></div>
+          <div class="col-md-6"><input type="text" class="form-control input-sm" name='max_middle_value'></div>
+      </div>
+      
+      <span class=""><strong><%= I18n.t('arb.Events till') %></strong></span>
+      <div class="row">
+        <% date_shift = 7 * 24 * 60 %>
+        <% d = date_shift / 60 /24 %>
+        <% h = (date_shift - d * 60 * 24) / 60 %>
+        <% m = date_shift - d * 60 * 24 - h * 60 %>
+          <div class="col-md-2">
+            <input type='text' class='form-control input-sm' name='till_days' id='till_days' value='<%= d  %>'></input>
+          </div>
+          <div class="col-md-2">д</div>
+          <div class="col-md-2">
+            <input type='text' class='form-control input-sm' name='till_hours' id='till_hours' value='<%= h  %>'></input>
+          </div>
+          <div class="col-md-2">ч</div>
+          <div class="col-md-2">
+            <input type='text' class='form-control input-sm' name='till_minutes' id='till_minutes' value='<%= m  %>'></input>
+          </div>
+          <div class="col-md-2">м</div>
+      </div>
 
-<div class="row">
-    <div class="checkbox"><label title='<%= I18n.t(' arb.Auto Update Tip') %>'><input type="checkbox"
-                                                                                      id="auto_update"
-                                                                                      name="auto_update"
-                                                                                      value='true'> Auto
-        Update</label></div>
-    <div class="checkbox"><label title='<%= I18n.t(' arb.Play sound Tip') %>'><input type="checkbox"
-                                                                                     id="notification_sound"
-                                                                                     name="notification_sound"
-                                                                                     value='true'> Sound
-        alerts</label></div>
-    <div class="checkbox"><label title='<%= I18n.t(' arb.Group arbs Tip') %>'><input type="checkbox" id='grouped'
-                                                                                     name='grouped' value='false'><%=
-        I18n.t('arb.Group arbs') %></label></div>
-    <div class="checkbox"><label title='<%= I18n.t(' arb.Middle arbs tip') %>'><input type="checkbox"
-                                                                                      id='only_middles'
-                                                                                      name='only_middles'
-                                                                                      value='true'><%=
-        I18n.t('arb.Middle arbs') %></label></div>
-    <div class="checkbox"><label title='<%= I18n.t(' arb.Same Rules Hint') %>'><input type="checkbox"
-                                                                                      name="only_rules_group"
-                                                                                      value='true'> Same
-        rules</label></div>
-    <div class="checkbox"><label title='<%= I18n.t(' arb.Diff book hint') %>'><input type="checkbox"
-                                                                                     name="only_diff_book"
-                                                                                     value='true'> Diff.
-        bookers</label></div>
-    <div class="checkbox"><label title='<%= I18n.t(' arb.Hide decimals hint') %>'><input type="checkbox"
-                                                                                         name="hide_decimal_values"
-                                                                                         value='true'> Hide
-        integers</label></div>
-</div>
-<span><strong><%= I18n.t('global.Profit') %></strong></span>
-
-<div class="row">
-    <div class="col-md-6"><input type="text" class="form-control input-sm" name='min_profit' value='0'
-                                 placeholder="0"></div>
-    <div class="col-md-6"><input type="text" class="form-control input-sm" name='max_profit' value='20'
-                                 placeholder="20"></div>
-</div>
-<span class=""><strong><%= I18n.t('global.Bets') %></strong></span>
-
-<div class="row">
-    <div class="col-md-6"><input type="text" class="form-control input-sm" name='min_koef'></div>
-    <div class="col-md-6"><input type="text" class="form-control input-sm" name='max_koef'></div>
-</div>
-<span class=""><strong><%= I18n.t('middle.Age') %></strong></span>
-
-<div class="row">
-    <div class="col-md-6"><input type="text" class="form-control input-sm" name='min_age'></div>
-    <div class="col-md-6"><input type="text" class="form-control input-sm" name='max_age'></div>
-</div>
-<span class=""><strong>ROI</strong></span>
-
-<div class="row">
-    <div class="col-md-6"><input type="text" class="form-control input-sm" name='min_roi'></div>
-    <div class="col-md-6"><input type="text" class="form-control input-sm" name='max_roi'></div>
-</div>
-<span class=""><strong><%= I18n.t('global.Middles') %></strong></span>
-
-<div class="row">
-    <div class="col-md-6"><input type="text" class="form-control input-sm" name='min_middle_value'></div>
-    <div class="col-md-6"><input type="text" class="form-control input-sm" name='max_middle_value'></div>
-</div>
-
-<span class=""><strong><%= I18n.t('arb.Events till') %></strong></span>
-
-<div class="row">
-    <% date_shift = 7 * 24 * 60 %>
-    <% d = date_shift / 60 /24 %>
-    <% h = (date_shift - d * 60 * 24) / 60 %>
-    <% m = date_shift - d * 60 * 24 - h * 60 %>
-    <div class="col-md-2">
-        <input type='text' class='form-control input-sm' name='till_days' id='till_days' value='<%= d  %>'></input>
-    </div>
-    <div class="col-md-2">д</div>
-    <div class="col-md-2">
-        <input type='text' class='form-control input-sm' name='till_hours' id='till_hours'
-               value='<%= h  %>'></input>
-    </div>
-    <div class="col-md-2">ч</div>
-    <div class="col-md-2">
-        <input type='text' class='form-control input-sm' name='till_minutes' id='till_minutes'
-               value='<%= m  %>'></input>
-    </div>
-    <div class="col-md-2">м</div>
-</div>
-
-<span class=""><strong><%= I18n.t('global.Outcomes') %></strong></span>
-
-<div class="row">
-    <div class="col-md-6">
-        <div class="checkbox">
+      <span class=""><strong><%= I18n.t('global.Outcomes') %></strong></span>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="checkbox">
             <label>
-                <input checked="checked" type="checkbox" name="outcomes[]" value="2">
-                2
+              <input checked="checked" type="checkbox" name="outcomes[]" value="2">
+              2
             </label>
+          </div>
         </div>
-    </div>
-    <div class="col-md-6">
-        <div class="checkbox">
+        <div class="col-md-6">
+          <div class="checkbox">
             <label>
-                <input checked="checked" type="checkbox" name="outcomes[]" value="3">
-                3
+              <input checked="checked" type="checkbox" name="outcomes[]" value="3">
+              3
             </label>
+          </div>
         </div>
-    </div>
-</div>
+      </div>
 
 
-<span class=""><strong><%= I18n.t('global.Per page') %></strong></span>
+      <span class=""><strong><%= I18n.t('global.Per page') %></strong></span>
+      <div class="row">
+        <select  name="per_page" class='form-control input-sm'>
+          <option value="10">10</option>
+          <option value="20" selected="selected">20</option>
+          <option value="30">30</option>
+          <option value="50">50</option>
+        </select>
+      </div>
 
-<div class="row">
-    <select name="per_page" class='form-control input-sm'>
-        <option value="10">10</option>
-        <option value="20" selected="selected">20</option>
-        <option value="30">30</option>
-        <option value="50">50</option>
-    </select>
-</div>
-
-<div class="row">
-    <a data-toggle="modal" href="#Bookmakers" class="btn btn-default btn-block"><%= I18n.t('global.Bookmakers')
-        %></a>
-</div>
-<div class="row">
-    <a data-toggle="modal" href="#Sports" class="btn btn-default btn-block"><%= I18n.t('global.Sports') %></a>
-</div>
-<div class="row">
-    <button type="submit" class="btn btn-primary btn-block"><%= I18n.t('global.Filter') %></button>
-</div>
-<!-- Modal Dialogs -->
-<div class="modal fade" id="Bookmakers" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-     aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">Bookmakers
-                    <small>Select bookmakers you need</small>
-                </h4>
-            </div>
-            <div class="modal-body">
-                <div class="pull-right">
-                    <%= I18n.t('global.All bookmakers') %>
-                    <input class='check-all' checked="checked" type="checkbox">
-                    </input>
-                </div>
-                <br/>
-                <ul class="nav nav-list" id="bookmakers_1">
-                </ul>
-            </div>
-            <div class="modal-header">
-                <h4 class="modal-title">Required Bookmakers
-                    <small>Bookmakers are participated in arbs</small>
-                </h4>
-            </div>
-            <div class="modal-body">
-                <div class="pull-right">
-                    <%= I18n.t('global.All bookmakers') %>
-                    <input class='check-all' checked="checked" type="checkbox">
-                    </input>
-                </div>
-                <br/>
-                <ul class="nav nav-list" id="bookmakers_2">
-                </ul>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary apply-button" data-dismiss="modal">Apply filter
-                </button>
-            </div>
-        </div>
-        <!-- /.modal-content -->
-    </div>
-    <!-- /.modal-dialog -->
-</div>
-<!-- /.modal -->
-
-<div class="modal fade" id="Sports" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">Sports
-                    <small>Select sports you need</small>
-                </h4>
-            </div>
-            <div class="modal-body">
-                <h5 class="modal-title">
-                    <%= I18n.t('global.Sports') %>
-                </h5>
-
-                <div>
-                    <ul class="nav nav-list" id="sports">
-                        <li>
-                            <input class='check-all' checked="checked" type="checkbox">
-                            </input>
-                            <%= I18n.t('global.Check All') %>
-                        </li>
+      <div class="row">
+          <a data-toggle="modal" href="#Bookmakers" class="btn btn-default btn-block"><%= I18n.t('global.Bookmakers') %></a>
+      </div>
+      <div class="row">
+          <a data-toggle="modal" href="#Sports" class="btn btn-default btn-block"><%= I18n.t('global.Sports') %></a>
+      </div>
+      <div class="row">
+          <button type="submit" class="btn btn-primary btn-block"><%= I18n.t('global.Filter') %></button>
+      </div>
+    <!-- Modal Dialogs -->
+      <div class="modal fade" id="Bookmakers" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <h4 class="modal-title">Bookmakers <small>Select bookmakers you need</small></h4>
+                  </div>
+                  <div class="modal-body">
+                    <div class="pull-right">
+                      <%= I18n.t('global.All bookmakers') %>
+                      <input class='check-all' checked="checked" type="checkbox">
+                      </input>
+                    </div>
+                    <br/>
+                    <ul class="nav nav-list" id="bookmakers_1">
                     </ul>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary apply-button" data-dismiss="modal">Apply filter
-                </button>
-            </div>
-        </div>
-        <!-- /.modal-content -->
-    </div>
-    <!-- /.modal-dialog -->
-</div>
-<!-- /.modal -->
-
-<div class="modal fade" id="WrongItems" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-     aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title"><%= I18n.t('arb.Reports of Incorrect Arb') %></h4>
-            </div>
-            <div class="modal-body">
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-        <!-- /.modal-content -->
-    </div>
-    <!-- /.modal-dialog -->
-</div>
-<!-- /.modal -->
-
-<!--/ Modal Dialogs -->
-</form>
-
-<div class="modal fade" id="ReportArb" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <form id="arb-report-form" action="#" method="post">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title">
-                        <%= I18n.t('arb.Report Incorrect Arb') %>
-                    </h4>
-                </div>
-                <div class="modal-body">
-                </div>
-                <div class="modal-footer">
+                  </div>
+                  <div class="modal-header">
+                    <h4 class="modal-title">Required Bookmakers    <small>Bookmakers are participated in arbs</small></h4>
+                  </div>
+                  <div class="modal-body">
+                    <div class="pull-right">
+                      <%= I18n.t('global.All bookmakers') %>
+                      <input class='check-all' checked="checked" type="checkbox">
+                      </input>
+                    </div>
+                    <br/>
+                    <ul class="nav nav-list" id="bookmakers_2">
+                    </ul>
+                  </div>
+                  <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <input type="submit" class="btn btn-primary submit-report" data-dismiss="modal"></input>
-                </div>
-            </form>
-        </div>
-        <!-- /.modal-content -->
-    </div>
-    <!-- /.modal-dialog -->
-</div><!-- /.modal -->
-<!--/ Modal Dialogs -->
-</script>
+                    <button type="button" class="btn btn-primary apply-button" data-dismiss="modal">Apply filter</button>
+                  </div>
+              </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
 
-<script type='text/template' id='report-template'>
+      <div class="modal fade" id="Sports" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <h4 class="modal-title">Sports <small>Select sports you need</small></h4>
+                  </div>
+                  <div class="modal-body">
+                    <h5 class="modal-title">
+                      <%= I18n.t('global.Sports') %>
+                    </h5>
+                    <div>
+                      <ul class="nav nav-list" id="sports">
+                        <li>
+                          <input class='check-all' checked="checked" type="checkbox">
+                          </input>
+                          <%= I18n.t('global.Check All') %>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary apply-button" data-dismiss="modal">Apply filter</button>
+                  </div>
+              </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+
+      <div class="modal fade" id="WrongItems" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <h4 class="modal-title"><%= I18n.t('arb.Reports of Incorrect Arb') %></h4>
+                  </div>
+                  <div class="modal-body">
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+              </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+
+    <!--/ Modal Dialogs -->
+    </form>
+
+    <div class="modal fade" id="ReportArb" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                <form id="arb-report-form" action="#" method="post">
+                  <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <h4 class="modal-title">
+                        <%= I18n.t('arb.Report Incorrect Arb') %>
+                      </h4>
+                  </div>
+                  <div class="modal-body">
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      <input type="submit" class="btn btn-primary submit-report" data-dismiss="modal"></input>
+                  </div>
+                </form>
+              </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+    <!--/ Modal Dialogs -->
+  </script>
+
+  <script type='text/template' id='report-template'>
     <% index = 0 %>
-    <input type="hidden" id="id" name="id" value="<%= arb.id %>"></input>
-    <% _(['In surebet involved different teams', 'One of the events wrongly reversed', 'Different rules in bookmakers']).each(function(reason) { %>
-    <p>
-        <input type='radio' name='reason' value="<%= reason  %>" id="reason_<%= index  %>"></input>
-        <label for="reason_<%= index  %>">
+      <input type="hidden" id="id" name="id" value="<%= arb.id %>"></input>
+      <% _(['In surebet involved different teams', 'One of the events wrongly reversed', 'Different rules in bookmakers']).each(function(reason) { %>
+        <p>
+          <input type='radio' name='reason' value="<%= reason  %>" id="reason_<%= index  %>"></input>
+          <label for="reason_<%= index  %>">
             <%= I18n.t("wrong_arb." + reason) %>
-        </label>
-        <% index = index + 1 %>
-    </p>
-    <% }) %>
-    <% _(['Error in %s on %s, possible return of the bet', '%s odds on %s scanned from a different outcome', '%s odds on %s already changed']).each(function (reason) { %>
-    <% _([1,2,3]).each(function (i) { %>
-    <% bet = arb['bet'+i]() %>
-    <% if (bet) { %>
-    <p>
-        <input type='radio' name='reason' value="<%= reason + "|" + bet.id %>" id="reason_<%= index %>"></input>
-        <label for="reason_<%= index %>">
-            <%= _(I18n.t("wrong_arb." + reason)).sprintf(bet.bookmaker().get('name'), bet.display_original_value(false))
-            %>
-        </label>
-        <% index = index + 1 %>
-    </p>
-    <% } %>
-    <% }) %>
-    <% }) %>
-    <p>
-        <input id="own_reason" name="own_reason" placeholder="<%= I18n.t('global.Your description of the issue')  %>"
-               style="width: 300px" type="text" value="">
-    </p>
-</script>
+          </label>
+          <% index = index + 1 %>
+        </p>
+      <% }) %>
+      <% _(['Error in %s on %s, possible return of the bet', '%s odds on %s scanned from a different outcome', '%s odds on %s already changed']).each(function (reason) { %>
+        <% _([1,2,3]).each(function (i) { %>
+          <% bet = arb['bet'+i]() %>
+          <% if (bet) { %>
+            <p>
+              <input type='radio' name='reason' value="<%= reason + "|" + bet.id %>" id="reason_<%= index  %>"></input>
+              <label for="reason_<%= index %>">
+                <%= _(I18n.t("wrong_arb." + reason)).sprintf(bet.bookmaker().get('name'), bet.display_original_value(false)) %>
+              </label>
+              <% index = index + 1 %>
+            </p>
+          <% } %>
+        <% }) %>
+      <% }) %>
+      <p>
+        <input id="own_reason" name="own_reason" placeholder="<%= I18n.t('global.Your description of the issue')  %>" style="width: 300px" type="text" value="">
+      </p>
+  </script>
 
-<script type='text/template' id='outcome-template'>
+  <script type='text/template' id='outcome-template'>
     <% sport = App.sports.get(arb.get('sport_id')).toJSON() %>
     <% bookmaker = App.bookmakers.get(outcome.get('bookmaker_id')) %>
     <% event_time_style = "" %>
 
     <div class="row">
-        <div class="col-md-1">
-            <%= bookmaker.go_link() %>
-            <br/>
-            <small class="text-muted"><%= I18n.t('sports.' + sport.name) %></small>
-        </div>
-        <% bk_event_time = new Date(outcome.get('started_at') * 1000) %>
-        <div class="col-md-1 text-center">
-            <small class="<%= css_class %>"><%= $.format.date(bk_event_time, "dd MMM") %></small>
-            <br/>
-            <small class="<%= css_class %>"><%= $.format.date(bk_event_time, "HH:mm") %></small>
-        </div>
-        <div class="col-md-6">
-            <a href="<%= Routes.bet_path(outcome) %>" target="_blank" title="<%= _(I18n.t(" arb.Fork for
-            %s")).sprintf(outcome.event_display_name()) %>"><%= outcome.event_display_name() %></a>
-            <br/>
-            <small class="text-muted"><%= outcome.get('league') %></small>
-        </div>
-        <div class="col-md-2 text-right">
-            <% if (outcome.market_id() > 0) { %>
-            <% compare_link = "/compare#sports/" + sport.id + "/countries/" + arb.get('country_id') + "/leagues/" +
-            arb.get('league_id')+ "/events/" + arb.get('event_id')+ "?period=" + outcome.period().get('identifier') +
-            "&market_id=" + outcome.market_id() %>
-            <% title = _(outcome.market_variation().i18n_title()).sprintf(outcome.bet_combination().value()) %>
-            <% } else { %>
-            <% compare_link = "/compare#sports/" + sport.id + "/countries/" + arb.get('country_id') + "/leagues/" +
-            arb.get('league_id')+ "/events/" + arb.get('event_id') %>
-            <% title = "xxx" %>
-            <% } %>
+      <div class="col-md-1">
+          <%= bookmaker.go_link() %>
+          <br />
+          <small class="text-muted"><%= I18n.t('sports.' + sport.name) %></small>
+      </div>
+      <% bk_event_time = new Date(outcome.get('started_at') * 1000) %>
+      <div class="col-md-1 text-center">
+        <small class="<%= css_class %>"><%= $.format.date(bk_event_time, "dd MMM") %></small><br />
+        <small class="<%= css_class %>"><%= $.format.date(bk_event_time, "HH:mm") %></small>
+      </div>
+      <div class="col-md-6">
+          <a href="<%= Routes.bet_path(outcome) %>" target="_blank" title="<%= _(I18n.t("arb.Fork for %s")).sprintf(outcome.event_display_name()) %>"><%= outcome.event_display_name() %></a>
+          <br/>
+          <small class="text-muted"><%= outcome.get('league') %></small>
+      </div>
+      <div class="col-md-2 text-right">
+           <% if (outcome.market_id() > 0) { %>
+           <% compare_link = "/compare#sports/" + sport.id + "/countries/" + arb.get('country_id') + "/leagues/" + arb.get('league_id')+ "/events/" + arb.get('event_id')+ "?period=" + outcome.period().get('identifier') + "&market_id=" + outcome.market_id() %>
+           <% title = _(outcome.market_variation().i18n_title()).sprintf(outcome.bet_combination().value()) %>
+           <% } else { %>
+           <% compare_link = "/compare#sports/" + sport.id + "/countries/" + arb.get('country_id') + "/leagues/" + arb.get('league_id')+ "/events/" + arb.get('event_id') %>
+           <% title = "xxx" %>
+           <% } %>
+                
+           <a href="<%= compare_link %>" target="_blank" title="<%= title %>">
+            <%= outcome.display_original_value() %>
+          </a>
+      </div>
+      <div class="col-md-1 text-right">
 
-            <a href="<%= compare_link %>" target="_blank" title="<%= title %>">
-                <%= outcome.display_original_value() %>
-            </a>
-        </div>
-        <div class="col-md-1 text-right">
+        <% if (outcome.get('diff') > 0) { %>
 
-            <% if (outcome.get('diff') > 0) { %>
+        <% if ((new Date().getTime() - outcome.get('updated_at')*1000)/1000 >= App.arrow_interval) { %>
+        <%   class_gray = 'gray' %>
+        <% } else { %>
+        <%   class_gray = '' %>
+        <% } %>
+        <%  if (outcome.get('diff') === 1) { %>
+          <span class="glyphicon glyphicon-arrow-up <%= class_gray %>"></span>
+        <%  } else { %>
+          <span class="glyphicon glyphicon-arrow-down <%= class_gray %>"></span>
+        <%  }} %>
 
-            <% if ((new Date().getTime() - outcome.get('updated_at')*1000)/1000 >= App.arrow_interval) { %>
-            <% class_gray = 'gray' %>
-            <% } else { %>
-            <% class_gray = '' %>
-            <% } %>
-            <% if (outcome.get('diff') === 1) { %>
-            <span class="glyphicon glyphicon-arrow-up <%= class_gray %>"></span>
-            <% } else { %>
-            <span class="glyphicon glyphicon-arrow-down <%= class_gray %>"></span>
-            <% }} %>
-
-            <a class="rating" href="<%= Routes.bet_path(outcome) %>" target="_blank" style="text-align: right;"
-               title="<%= _(I18n.t(" arb.Odd %s on the outcome %s of event %s")).sprintf(outcome.get('koef'),
-            outcome.display_original_value(), outcome.event_display_name()) %>">
-            <strong>
-                <%= outcome.print_koef() %>
-            </strong>
-            </a>
-        </div>
-        <div class="col-md-1 text-right">
-            <button type="button" class="close exclude_bet" bet=<%= outcome.id
-            %> aria-hidden="true" title="<%= I18n.t('arb.Remove Bet') %>">&times;</button>
-        </div>
+        <a class="rating" href="<%= Routes.bet_path(outcome) %>" target="_blank" style="text-align: right;" title="<%= _(I18n.t("arb.Odd %s on the outcome %s of event %s")).sprintf(outcome.get('koef'), outcome.display_original_value(), outcome.event_display_name()) %>">
+          <strong>
+            <%= outcome.print_koef() %>
+          </strong>
+        </a>
+      </div>
+      <div class="col-md-1 text-right">
+        <button type="button" class="close exclude_bet" bet=<%= outcome.id %> aria-hidden="true" title="<%= I18n.t('arb.Remove Bet')  %>">&times;</button>
+      </div>
     </div>
-</script>
+  </script>
 
-<script type='text/template' id='arb-template'>
+  <script type='text/template' id='arb-template'>
     <% row_class = ""; %>
     <% row_style = ""; %>
     <% if (arb.get('middle_value')) { row_class += " middle" } %>
@@ -518,95 +439,82 @@
     <%    row_style = "border: #FED42B 1px solid;"; %>
     <% } %>
     <div class="panel styles-updated panel-default <%= row_class %>" style="<%= row_style %>">
-        <div class="panel-body">
-            <div class="col-md-3">
-                <div class="row vertical-styles">
-                    <div class="col-md-6">
-                        <div class="row calc">
-                            <a href="#" target='_blank' rel='nofollow' class='calculator_link' data-arb="<%= arb.id %>">
+      <div class="panel-body">
+          <div class="col-md-3">
+              <div class="row vertical-styles">
+                  <div class="col-md-6">
+                      <div class="row calc">
+                          <a href="#" target='_blank' rel='nofollow' class='calculator_link' data-arb="<%= arb.id %>">
                             <span class="label label-default percent pull-left">
                                 <%= _("%.2f").sprintf(arb.get('percent')) + '%' %>
                                 <% if (arb.get('middle_value')) { %>
-                                  <small class="label label-warning middle-value pull-right" title='<%= I18n.t('
-                                         arb.middle_equals_n') %>'>
+                                  <small class="label label-warning middle-value pull-right" title='<%= I18n.t('arb.middle_equals_n') %>'>
                                       <%= arb.get('middle_value') %>
-                                </small>
+                                  </small>
                                 <% } %>
                             </span>
-                            </a>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="btn-toolbar">
-                                    <div class="btn-group-xs">
-                                        <button type="button" class="btn btn-sm report_arb" title='<%= I18n.t('
-                                                arb.Report Incorrect Arb
-                                        ') %>' data-arb='<%= arb.id %>'><span class="glyphicon glyphicon-bullhorn">
+                          </a>
+                      </div>
+                      <div class="row">
+                          <div class="col-md-12">
+                              <div class="btn-toolbar">
+                                  <div class="btn-group-xs">
+                                    <button type="button" class="btn btn-sm report_arb" title='<%= I18n.t('arb.Report Incorrect Arb') %>' data-arb='<%= arb.id %>'><span class="glyphicon glyphicon-bullhorn">
                                         <% if (arb.wrong_items()) { %>
-                                          <span class='label label-danger wrong-items' title='<%= I18n.t('
-                                                arb.n_error_messages') %>' data-arb='<%= arb.id %>' data-event='<%= arb.get('event_id') %>'><%= arb.wrong_items().get('total') %></span>
+                                          <span class='label label-danger wrong-items' title='<%= I18n.t('arb.n_error_messages') %>' data-arb='<%= arb.id %>' data-event='<%= arb.get('event_id') %>'><%= arb.wrong_items().get('total') %></span>
                                         <% } %>
-                                        </span></button>
-                                        <button type="button" class="btn btn-sm exclude_arb" title='<%= I18n.t('
-                                                arb.Remove Arb
-                                        ') %>' arb='<%= arb.id %>'><span
-                                            class="glyphicon glyphicon-trash"></span></button>
-                                        <button type="button" class="btn btn-sm exclude_event" title='<%= I18n.t('
-                                                arb.Delete event
-                                        ') %>' event='<%= arb.get('event_id') %>'><span
-                                            class="glyphicon glyphicon-off"></span></button>
-
-                                        <% if (filter.grouped == true && filter.event_id == null) { %>
-                                        <button data-event-id=<%= arb.get
-                                        ('event_id') %> type="button" class="btn btn-sm show-event-arbs" title="<%=
-                                        _(I18n.t("arb.Show more arbs for %s")).sprintf(arb.get('event_name')) %>">
-                                        <span class="glyphicon glyphicon-plus"></span>
+                                    </span></button>
+                                      <button type="button" class="btn btn-sm exclude_arb" title='<%= I18n.t('arb.Remove Arb') %>' arb='<%= arb.id %>'><span class="glyphicon glyphicon-trash"></span></button>
+                                      <button type="button" class="btn btn-sm exclude_event" title='<%= I18n.t('arb.Delete event') %>' event='<%= arb.get('event_id') %>'><span class="glyphicon glyphicon-off"></span></button>
+ 
+                                      <% if (filter.grouped == true && filter.event_id == null) { %>
+                                        <button data-event-id=<%= arb.get('event_id') %> type="button" class="btn btn-sm show-event-arbs" title="<%= _(I18n.t("arb.Show more arbs for %s")).sprintf(arb.get('event_name')) %>">
+                                          <span class="glyphicon glyphicon-plus"></span>
                                         </button>
-                                        <% } %>
-                                    </div>
-                                </div>
+                                      <% } %>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-md-6 text-center">
+                      <div class="row">
+                          <div class="col-md-12">
+                            <div class="icon icon-<%= arb.get('sport_id') %>">
+                              Icon
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 text-center">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="icon icon-<%= arb.get('sport_id') %>">
-                                    Icon
-                                </div>
-                                <small class="text-muted">
-                                    <%= $.format.date(new Date(arb.get('updated_at') * 1000), "dd MMM HH:mm") %>
-                                </small>
-                                <p><span class="badge"><small><%= _("%.2f").sprintf(arb.get('roi')) + '%' %>
-                                </small></span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                            <small class="text-muted">
+                              <%= $.format.date(new Date(arb.get('updated_at') * 1000), "dd MMM HH:mm") %>
+                            </small>
+                            <p><span class="badge"><small><%= _("%.2f").sprintf(arb.get('roi')) + '%' %></small></span></p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
 
-            <div class="col-md-9_half">
-                <%= item_template({arb: arb, outcome: App.bets.get(arb.get('bet1_id')), css_class: ''}) %>
-                <%= item_template({arb: arb, outcome: App.bets.get(arb.get('bet2_id')), css_class: ''}) %>
-                <% if (arb.get('bet3_id')) { %>
-                <%= item_template({arb: arb, outcome: App.bets.get(arb.get('bet3_id')), css_class: ''}) %>
-                <% } %>
-            </div>
-        </div>
+          <div class="col-md-9_half">
+              <%= item_template({arb: arb, outcome: App.bets.get(arb.get('bet1_id')), css_class: ''})  %>
+              <%= item_template({arb: arb, outcome: App.bets.get(arb.get('bet2_id')), css_class: ''})  %>
+              <% if (arb.get('bet3_id')) { %>
+                <%= item_template({arb: arb, outcome: App.bets.get(arb.get('bet3_id')), css_class: ''})  %>
+              <% } %>
+          </div>
+      </div>
     </div>
-</script>
+  </script>
 
-<script type='text/template' id='list-item-template'>
+  <script type='text/template' id='list-item-template'>
     <% items.each(function(item) { %>
-    <li>
+      <li>
         <input checked="checked" type="checkbox" name="<%= name %>[]" value="<%= item.id %>">
         </input>
-        <%= item.get("name") %>
-    </li>
+        <%= item.get("name")  %>
+      </li>
     <% }) %>
-</script>
+  </script>
 
-<script type='text/template' id='report-email-template'>
+  <script type='text/template' id='report-email-template'>
     <a href="http://allbestbets.ru<%= arb.calculator_url() %>">Calculator Link</a>
     <br/>
     <br/>
@@ -619,7 +527,7 @@
     <br/>
     <br/>
     <b>
-        <%= _("%.2f").sprintf(arb.get('percent')) + "%" %>
+      <%= _("%.2f").sprintf(arb.get('percent')) + "%" %>
     </b>
     <%= I18n.t("sports." + sport.get('name')) %>
     <br/>
@@ -627,61 +535,59 @@
     <br/>
     <br/>
     <table cellpadding="10" cellspacing="5">
-        <%= render_outcome({arb: arb, outcome: arb.bet1()}) %>
-        <%= render_outcome({arb: arb, outcome: arb.bet2()}) %>
-        <% if (arb.bet3()) { %>
+      <%= render_outcome({arb: arb, outcome: arb.bet1()}) %>
+      <%= render_outcome({arb: arb, outcome: arb.bet2()}) %>
+      <% if (arb.bet3()) { %>
         <%= render_outcome({arb: arb, outcome: arb.bet3()}) %>
-        <% } %>
+      <% } %>
     </table>
-</script>
+  </script>
 
-<script type='text/template' id='outcome-email-template'>
+  <script type='text/template' id='outcome-email-template'>
     <tr>
-        <td>
-            <b>
-                <%= outcome.bookmaker().get('name') %>
-            </b>
-        </td>
-        <td>
-            <%= arb.get('event_name') %>
-            <%= I18n.t("bet." + App.Models.Bet.period_name_by_sport(outcome.period().get('identifier'),
-            arb.get('sport_id'))) %>
-        </td>
-        <td>
-            <%= arb.get('league') %>
-        </td>
-        <td>
-            <%= outcome.display_original_value() %>
-        </td>
-        <td>
-            <a href="http://allbestbets.ru/bets/<%= outcome.id %>">
-                <%= outcome.get('koef') %>
-            </a>
-        </td>
+      <td>
+        <b>
+          <%= outcome.bookmaker().get('name') %>
+        </b>
+      </td>
+      <td>
+        <%= arb.get('event_name') %>
+        <%= I18n.t("bet." + App.Models.Bet.period_name_by_sport(outcome.period().get('identifier'), arb.get('sport_id'))) %>
+      </td>
+      <td>
+        <%= arb.get('league') %>
+      </td>
+      <td>
+        <%= outcome.display_original_value() %>
+      </td>
+      <td>
+        <a href="http://allbestbets.ru/bets/<%= outcome.id %>">
+          <%= outcome.get('koef') %>
+        </a>
+      </td>
     </tr>
-</script>
+  </script>
 
-<script type='text/template' id='wrong-items-template'>
+  <script type='text/template' id='wrong-items-template'>
     <ul>
-        <% _(items).each(function (reason) { %>
+      <% _(items).each(function (reason) { %>
         <li>
-            <% if (/\([\d\.\-\+]+\)/.test(reason.comment)) { %>
+          <% if (/\([\d\.\-\+]+\)/.test(reason.comment)) { %>
             <%= reason.comment %>
-            <% } else if (/\|/.test(reason.comment)) { %>
+          <% } else if (/\|/.test(reason.comment)) { %>
             <% info = reason.comment.split('|') %>
             <% bet = App.bets.get(info[1]) %>
-            <%= _(I18n.t("wrong_arb." + info[0])).sprintf(bet.bookmaker().get('name'),
-            bet.display_original_value(false)) %>
-            <% } else { %>
+            <%= _(I18n.t("wrong_arb." + info[0])).sprintf(bet.bookmaker().get('name'), bet.display_original_value(false)) %>
+          <% } else { %>
             <%= I18n.t("wrong_arb." + reason.comment) %>
-            <% } %>
+          <% } %>
         </li>
-        <% }) %>
+      <% }) %>
     </ul>
-</script>
+  </script>
 
-</body>
-<script src="js/bootstrap.js"></script>
-<script src="js/abb.js" type="text/javascript"></script>
-<script src="js/arbs.js" type="text/javascript"></script>
+  </body>
+  <script src="js/bootstrap.js"></script>
+  <script src="js/abb.js" type="text/javascript"></script>
+  <script src="js/arbs.js" type="text/javascript"></script>
 </html>
