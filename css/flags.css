@@ -1,0 +1,1266 @@
+/* line 1, ../../app/assets/stylesheets/flags.css.scss */
+.flag {
+  background: url(../images/flags.png) no-repeat;
+  height: 11px;
+  width: 16px;
+}
+
+/* line 6, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag- {
+  background-image: url(../images/world.png);
+}
+
+/* line 8, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-ad {
+  background-position: -16px 0;
+}
+
+/* line 9, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-ae {
+  background-position: -32px 0;
+}
+
+/* line 10, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-af {
+  background-position: -48px 0;
+}
+
+/* line 11, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-ag {
+  background-position: -64px 0;
+}
+
+/* line 12, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-ai {
+  background-position: -80px 0;
+}
+
+/* line 13, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-al {
+  background-position: -96px 0;
+}
+
+/* line 14, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-am {
+  background-position: -112px 0;
+}
+
+/* line 15, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-an {
+  background-position: -128px 0;
+}
+
+/* line 16, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-ao {
+  background-position: -144px 0;
+}
+
+/* line 17, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-ar {
+  background-position: -160px 0;
+}
+
+/* line 18, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-as {
+  background-position: -176px 0;
+}
+
+/* line 19, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-at {
+  background-position: -192px 0;
+}
+
+/* line 20, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-au {
+  background-position: -208px 0;
+}
+
+/* line 21, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-aw {
+  background-position: -224px 0;
+}
+
+/* line 22, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-az {
+  background-position: -240px 0;
+}
+
+/* line 24, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-ba {
+  background-position: 0 -11px;
+}
+
+/* line 25, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-bb {
+  background-position: -16px -11px;
+}
+
+/* line 26, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-bd {
+  background-position: -32px -11px;
+}
+
+/* line 27, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-be {
+  background-position: -48px -11px;
+}
+
+/* line 28, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-bf {
+  background-position: -64px -11px;
+}
+
+/* line 29, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-bg {
+  background-position: -80px -11px;
+}
+
+/* line 30, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-bh {
+  background-position: -96px -11px;
+}
+
+/* line 31, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-bi {
+  background-position: -112px -11px;
+}
+
+/* line 32, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-bj {
+  background-position: -128px -11px;
+}
+
+/* line 33, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-bm {
+  background-position: -144px -11px;
+}
+
+/* line 34, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-bn {
+  background-position: -160px -11px;
+}
+
+/* line 35, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-bo {
+  background-position: -176px -11px;
+}
+
+/* line 36, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-br {
+  background-position: -192px -11px;
+}
+
+/* line 37, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-bs {
+  background-position: -208px -11px;
+}
+
+/* line 38, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-bt {
+  background-position: -224px -11px;
+}
+
+/* line 39, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-bv {
+  background-position: -240px -11px;
+}
+
+/* line 40, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-bw {
+  background-position: 0 -22px;
+}
+
+/* line 41, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-by {
+  background-position: -16px -22px;
+}
+
+/* line 42, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-bz {
+  background-position: -32px -22px;
+}
+
+/* line 44, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-ca {
+  background-position: -48px -22px;
+}
+
+/* line 45, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-catalonia {
+  background-position: -64px -22px;
+}
+
+/* line 46, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-cd {
+  background-position: -80px -22px;
+}
+
+/* line 47, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-cf {
+  background-position: -96px -22px;
+}
+
+/* line 48, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-cg {
+  background-position: -112px -22px;
+}
+
+/* line 49, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-ch {
+  background-position: -128px -22px;
+}
+
+/* line 50, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-ci {
+  background-position: -144px -22px;
+}
+
+/* line 51, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-ck {
+  background-position: -160px -22px;
+}
+
+/* line 52, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-cl {
+  background-position: -176px -22px;
+}
+
+/* line 53, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-cm {
+  background-position: -192px -22px;
+}
+
+/* line 54, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-cn {
+  background-position: -208px -22px;
+}
+
+/* line 55, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-co {
+  background-position: -224px -22px;
+}
+
+/* line 56, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-cr {
+  background-position: -240px -22px;
+}
+
+/* line 57, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-cu {
+  background-position: 0 -33px;
+}
+
+/* line 58, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-cv {
+  background-position: -16px -33px;
+}
+
+/* line 59, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-cw {
+  background-position: -32px -33px;
+}
+
+/* line 60, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-cy {
+  background-position: -48px -33px;
+}
+
+/* line 61, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-cz {
+  background-position: -64px -33px;
+}
+
+/* line 63, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-de {
+  background-position: -80px -33px;
+}
+
+/* line 64, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-dj {
+  background-position: -96px -33px;
+}
+
+/* line 65, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-dk {
+  background-position: -112px -33px;
+}
+
+/* line 66, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-dm {
+  background-position: -128px -33px;
+}
+
+/* line 67, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-do {
+  background-position: -144px -33px;
+}
+
+/* line 68, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-dz {
+  background-position: -160px -33px;
+}
+
+/* line 70, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-ec {
+  background-position: -176px -33px;
+}
+
+/* line 71, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-ee {
+  background-position: -192px -33px;
+}
+
+/* line 72, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-eg {
+  background-position: -208px -33px;
+}
+
+/* line 73, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-eh {
+  background-position: -224px -33px;
+}
+
+/* line 74, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-england {
+  background-position: -240px -33px;
+}
+
+/* line 75, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-er {
+  background-position: 0 -44px;
+}
+
+/* line 76, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-es {
+  background-position: -16px -44px;
+}
+
+/* line 77, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-et {
+  background-position: -32px -44px;
+}
+
+/* line 78, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-eu {
+  background-position: -48px -44px;
+}
+
+/* line 80, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-fi {
+  background-position: -64px -44px;
+}
+
+/* line 81, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-fj {
+  background-position: -80px -44px;
+}
+
+/* line 82, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-fk {
+  background-position: -96px -44px;
+}
+
+/* line 83, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-fm {
+  background-position: -112px -44px;
+}
+
+/* line 84, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-fo {
+  background-position: -128px -44px;
+}
+
+/* line 85, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-fr {
+  background-position: -144px -44px;
+}
+
+/* line 87, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-ga {
+  background-position: -160px -44px;
+}
+
+/* line 88, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-gb {
+  background-position: -176px -44px;
+}
+
+/* line 89, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-gd {
+  background-position: -192px -44px;
+}
+
+/* line 90, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-ge {
+  background-position: -208px -44px;
+}
+
+/* line 91, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-gf {
+  background-position: -224px -44px;
+}
+
+/* line 92, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-gg {
+  background-position: -240px -44px;
+}
+
+/* line 93, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-gh {
+  background-position: 0 -55px;
+}
+
+/* line 94, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-gi {
+  background-position: -16px -55px;
+}
+
+/* line 95, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-gl {
+  background-position: -32px -55px;
+}
+
+/* line 96, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-gm {
+  background-position: -48px -55px;
+}
+
+/* line 97, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-gn {
+  background-position: -64px -55px;
+}
+
+/* line 98, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-gp {
+  background-position: -80px -55px;
+}
+
+/* line 99, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-gq {
+  background-position: -96px -55px;
+}
+
+/* line 100, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-gr {
+  background-position: -112px -55px;
+}
+
+/* line 101, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-gs {
+  background-position: -128px -55px;
+}
+
+/* line 102, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-gt {
+  background-position: -144px -55px;
+}
+
+/* line 103, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-gu {
+  background-position: -160px -55px;
+}
+
+/* line 104, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-gw {
+  background-position: -176px -55px;
+}
+
+/* line 105, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-gy {
+  background-position: -192px -55px;
+}
+
+/* line 107, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-hk {
+  background-position: -208px -55px;
+}
+
+/* line 108, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-hm {
+  background-position: -224px -55px;
+}
+
+/* line 109, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-hn {
+  background-position: -240px -55px;
+}
+
+/* line 110, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-hr {
+  background-position: 0 -66px;
+}
+
+/* line 111, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-ht {
+  background-position: -16px -66px;
+}
+
+/* line 112, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-hu {
+  background-position: -32px -66px;
+}
+
+/* line 114, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-id {
+  background-position: -48px -66px;
+}
+
+/* line 115, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-ie {
+  background-position: -64px -66px;
+}
+
+/* line 116, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-il {
+  background-position: -80px -66px;
+}
+
+/* line 117, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-im {
+  background-position: -96px -66px;
+}
+
+/* line 118, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-in {
+  background-position: -112px -66px;
+}
+
+/* line 119, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-io {
+  background-position: -128px -66px;
+}
+
+/* line 120, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-iq {
+  background-position: -144px -66px;
+}
+
+/* line 121, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-ir {
+  background-position: -160px -66px;
+}
+
+/* line 122, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-is {
+  background-position: -176px -66px;
+}
+
+/* line 123, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-it {
+  background-position: -192px -66px;
+}
+
+/* line 125, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-je {
+  background-position: -208px -66px;
+}
+
+/* line 126, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-jm {
+  background-position: -224px -66px;
+}
+
+/* line 127, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-jo {
+  background-position: -240px -66px;
+}
+
+/* line 128, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-jp {
+  background-position: 0 -77px;
+}
+
+/* line 130, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-ke {
+  background-position: -16px -77px;
+}
+
+/* line 131, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-kg {
+  background-position: -32px -77px;
+}
+
+/* line 132, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-kh {
+  background-position: -48px -77px;
+}
+
+/* line 133, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-ki {
+  background-position: -64px -77px;
+}
+
+/* line 134, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-km {
+  background-position: -80px -77px;
+}
+
+/* line 135, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-kn {
+  background-position: -96px -77px;
+}
+
+/* line 136, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-kp {
+  background-position: -112px -77px;
+}
+
+/* line 137, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-kr {
+  background-position: -128px -77px;
+}
+
+/* line 138, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-kurdistan {
+  background-position: -144px -77px;
+}
+
+/* line 139, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-kw {
+  background-position: -160px -77px;
+}
+
+/* line 140, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-ky {
+  background-position: -176px -77px;
+}
+
+/* line 141, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-kz {
+  background-position: -192px -77px;
+}
+
+/* line 143, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-la {
+  background-position: -208px -77px;
+}
+
+/* line 144, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-lb {
+  background-position: -224px -77px;
+}
+
+/* line 145, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-lc {
+  background-position: -240px -77px;
+}
+
+/* line 146, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-li {
+  background-position: 0 -88px;
+}
+
+/* line 147, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-lk {
+  background-position: -16px -88px;
+}
+
+/* line 148, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-lr {
+  background-position: -32px -88px;
+}
+
+/* line 149, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-ls {
+  background-position: -48px -88px;
+}
+
+/* line 150, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-lt {
+  background-position: -64px -88px;
+}
+
+/* line 151, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-lu {
+  background-position: -80px -88px;
+}
+
+/* line 152, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-lv {
+  background-position: -96px -88px;
+}
+
+/* line 153, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-ly {
+  background-position: -112px -88px;
+}
+
+/* line 155, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-ma {
+  background-position: -128px -88px;
+}
+
+/* line 156, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-mc {
+  background-position: -144px -88px;
+}
+
+/* line 157, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-md {
+  background-position: -160px -88px;
+}
+
+/* line 158, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-me {
+  background-position: -176px -88px;
+}
+
+/* line 159, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-mg {
+  background-position: -192px -88px;
+}
+
+/* line 160, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-mh {
+  background-position: -208px -88px;
+}
+
+/* line 161, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-mk {
+  background-position: -224px -88px;
+}
+
+/* line 162, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-ml {
+  background-position: -240px -88px;
+}
+
+/* line 163, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-mm {
+  background-position: 0 -99px;
+}
+
+/* line 164, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-mn {
+  background-position: -16px -99px;
+}
+
+/* line 165, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-mo {
+  background-position: -32px -99px;
+}
+
+/* line 166, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-mp {
+  background-position: -48px -99px;
+}
+
+/* line 167, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-mq {
+  background-position: -64px -99px;
+}
+
+/* line 168, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-mr {
+  background-position: -80px -99px;
+}
+
+/* line 169, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-ms {
+  background-position: -96px -99px;
+}
+
+/* line 170, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-mt {
+  background-position: -112px -99px;
+}
+
+/* line 171, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-mu {
+  background-position: -128px -99px;
+}
+
+/* line 172, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-mv {
+  background-position: -144px -99px;
+}
+
+/* line 173, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-mw {
+  background-position: -160px -99px;
+}
+
+/* line 174, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-mx {
+  background-position: -176px -99px;
+}
+
+/* line 175, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-my {
+  background-position: -192px -99px;
+}
+
+/* line 176, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-mz {
+  background-position: -208px -99px;
+}
+
+/* line 178, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-na {
+  background-position: -224px -99px;
+}
+
+/* line 179, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-nc {
+  background-position: -240px -99px;
+}
+
+/* line 180, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-ne {
+  background-position: 0 -110px;
+}
+
+/* line 181, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-nf {
+  background-position: -16px -110px;
+}
+
+/* line 182, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-ng {
+  background-position: -32px -110px;
+}
+
+/* line 183, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-n_ireland {
+  background-position: -240px -44px;
+}
+
+/* line 184, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-ni {
+  background-position: -48px -110px;
+}
+
+/* line 185, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-nl {
+  background-position: -64px -110px;
+}
+
+/* line 186, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-no {
+  background-position: -80px -110px;
+}
+
+/* line 187, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-np {
+  background-position: -96px -110px;
+}
+
+/* line 188, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-nr {
+  background-position: -112px -110px;
+}
+
+/* line 189, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-nu {
+  background-position: -128px -110px;
+}
+
+/* line 190, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-nz {
+  background-position: -144px -110px;
+}
+
+/* line 192, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-om {
+  background-position: -160px -110px;
+}
+
+/* line 194, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-pa {
+  background-position: -176px -110px;
+}
+
+/* line 195, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-pe {
+  background-position: -192px -110px;
+}
+
+/* line 196, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-pf {
+  background-position: -208px -110px;
+}
+
+/* line 197, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-pg {
+  background-position: -224px -110px;
+}
+
+/* line 198, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-ph {
+  background-position: -240px -110px;
+}
+
+/* line 199, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-pk {
+  background-position: 0 -121px;
+}
+
+/* line 200, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-pl {
+  background-position: -16px -121px;
+}
+
+/* line 201, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-pm {
+  background-position: -32px -121px;
+}
+
+/* line 202, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-pn {
+  background-position: -48px -121px;
+}
+
+/* line 203, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-pr {
+  background-position: -64px -121px;
+}
+
+/* line 204, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-ps {
+  background-position: -80px -121px;
+}
+
+/* line 205, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-pt {
+  background-position: -96px -121px;
+}
+
+/* line 206, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-pw {
+  background-position: -112px -121px;
+}
+
+/* line 207, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-py {
+  background-position: -128px -121px;
+}
+
+/* line 209, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-qa {
+  background-position: -144px -121px;
+}
+
+/* line 211, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-re {
+  background-position: -160px -121px;
+}
+
+/* line 212, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-ro {
+  background-position: -176px -121px;
+}
+
+/* line 213, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-rs {
+  background-position: -192px -121px;
+}
+
+/* line 214, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-rs_and_m {
+  background-position: -192px -121px;
+}
+
+/* line 215, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-ru {
+  background-position: -208px -121px;
+}
+
+/* line 216, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-rw {
+  background-position: -224px -121px;
+}
+
+/* line 218, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-sa {
+  background-position: -240px -121px;
+}
+
+/* line 219, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-sb {
+  background-position: 0 -132px;
+}
+
+/* line 220, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-sc {
+  background-position: -16px -132px;
+}
+
+/* line 221, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-scotland {
+  background-position: -32px -132px;
+}
+
+/* line 222, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-sd {
+  background-position: -48px -132px;
+}
+
+/* line 223, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-se {
+  background-position: -64px -132px;
+}
+
+/* line 224, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-sg {
+  background-position: -80px -132px;
+}
+
+/* line 225, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-sh {
+  background-position: -96px -132px;
+}
+
+/* line 226, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-si {
+  background-position: -112px -132px;
+}
+
+/* line 227, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-sk {
+  background-position: -128px -132px;
+}
+
+/* line 228, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-sl {
+  background-position: -144px -132px;
+}
+
+/* line 229, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-sm {
+  background-position: -160px -132px;
+}
+
+/* line 230, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-sn {
+  background-position: -176px -132px;
+}
+
+/* line 231, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-so {
+  background-position: -192px -132px;
+}
+
+/* line 232, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-somaliland {
+  background-position: -208px -132px;
+}
+
+/* line 233, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-sr {
+  background-position: -224px -132px;
+}
+
+/* line 234, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-ss {
+  background-position: -240px -132px;
+}
+
+/* line 235, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-st {
+  background-position: 0 -143px;
+}
+
+/* line 236, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-sv {
+  background-position: -16px -143px;
+}
+
+/* line 237, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-sy {
+  background-position: -32px -143px;
+}
+
+/* line 238, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-sz {
+  background-position: -48px -143px;
+}
+
+/* line 240, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-tc {
+  background-position: -64px -143px;
+}
+
+/* line 241, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-td {
+  background-position: -80px -143px;
+}
+
+/* line 242, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-tf {
+  background-position: -96px -143px;
+}
+
+/* line 243, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-tg {
+  background-position: -112px -143px;
+}
+
+/* line 244, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-th {
+  background-position: -128px -143px;
+}
+
+/* line 245, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-tj {
+  background-position: -144px -143px;
+}
+
+/* line 246, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-tk {
+  background-position: -160px -143px;
+}
+
+/* line 247, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-tl {
+  background-position: -176px -143px;
+}
+
+/* line 248, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-tm {
+  background-position: -192px -143px;
+}
+
+/* line 249, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-tn {
+  background-position: -208px -143px;
+}
+
+/* line 250, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-to {
+  background-position: -224px -143px;
+}
+
+/* line 251, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-tr {
+  background-position: -240px -143px;
+}
+
+/* line 252, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-tt {
+  background-position: 0 -154px;
+}
+
+/* line 253, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-tv {
+  background-position: -16px -154px;
+}
+
+/* line 254, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-tw {
+  background-position: -32px -154px;
+}
+
+/* line 255, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-tz {
+  background-position: -48px -154px;
+}
+
+/* line 257, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-ua {
+  background-position: -64px -154px;
+}
+
+/* line 258, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-ug {
+  background-position: -80px -154px;
+}
+
+/* line 259, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-um {
+  background-position: -96px -154px;
+}
+
+/* line 260, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-us {
+  background-position: -112px -154px;
+}
+
+/* line 261, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-uy {
+  background-position: -128px -154px;
+}
+
+/* line 262, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-uz {
+  background-position: -144px -154px;
+}
+
+/* line 264, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-va {
+  background-position: -160px -154px;
+}
+
+/* line 265, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-vc {
+  background-position: -176px -154px;
+}
+
+/* line 266, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-ve {
+  background-position: -192px -154px;
+}
+
+/* line 267, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-vg {
+  background-position: -208px -154px;
+}
+
+/* line 268, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-vi {
+  background-position: -224px -154px;
+}
+
+/* line 269, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-vn {
+  background-position: -240px -154px;
+}
+
+/* line 270, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-vu {
+  background-position: 0 -165px;
+}
+
+/* line 272, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-wales {
+  background-position: -16px -165px;
+}
+
+/* line 273, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-wf {
+  background-position: -32px -165px;
+}
+
+/* line 274, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-ws {
+  background-position: -48px -165px;
+}
+
+/* line 276, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-ye {
+  background-position: -64px -165px;
+}
+
+/* line 277, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-yt {
+  background-position: -80px -165px;
+}
+
+/* line 279, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-za {
+  background-position: -96px -165px;
+}
+
+/* line 280, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-zanzibar {
+  background-position: -112px -165px;
+}
+
+/* line 281, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-zm {
+  background-position: -128px -165px;
+}
+
+/* line 282, ../../app/assets/stylesheets/flags.css.scss */
+.flag.flag-zw {
+  background-position: -144px -165px;
+}

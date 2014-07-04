@@ -1,0 +1,11 @@
+li i.flag {
+  width: 16px;
+  height: 11px;
+  float: left;
+  margin-right: 8px;
+  margin-top: 5px;
+}
+
+ul.countries, ul.leagues {
+  list-style: none;
+}

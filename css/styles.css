@@ -1,0 +1,285 @@
+body{min-width: 1170px;}
+body.calculator{min-width: 615px;}
+.footer {
+    border-top: 1px solid #eee;
+    margin-top: 40px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+    text-align: center;
+    background-color: transparent;
+}
+.jumbotron .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+}
+
+.form-signin {
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+    margin-bottom: 10px;
+}
+.form-signin .checkbox {
+    font-weight: normal;
+}
+.form-signin .form-control {
+    position: relative;
+    font-size: 16px;
+    height: auto;
+    padding: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.form-signin .form-control:focus {
+    z-index: 2;
+}
+.form-signin input[type="text"] {
+    margin-bottom: -1px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+.surebets{
+    /*font-size: 14px;*/
+    line-height: 1.3;
+}
+.surebets .panel-body{
+    padding: 6px;
+}
+.surebets .panel-danger{
+    border-color: #D9534F;
+}
+.surebets .panel-warning{
+    border-color: orange;
+}
+.surebets .panel-success{
+    border-color: #5CB85C;
+}
+.surebets .table{
+    margin: 0;
+    padding: 0;
+}
+.surebets .table thead tr th{
+    border-bottom: 1px;
+    font-weight: normal;
+}
+.surebets small {
+    font-size: 11px;
+}
+.surebets .percent {
+    font-size: 20px;
+}
+.surebets .toolbar{
+    width: 3.0%;
+}
+.filter {
+    margin: 0 0 5px 0;
+}
+.filter h2{
+    margin: 0px;
+}
+.filter .lead{
+    margin: 0px;
+}
+.filter .col-md-6, .filter .col-md-2 {
+    padding: 0 1px 0 1px;
+}
+
+.filter .col-md-2 .input-sm {
+  padding: 0 0 0 3px;
+}
+
+.filter .row {
+    padding: 0 15px 5px 15px;
+}
+.filter .checkbox {
+    margin: 0;
+}
+
+
+
+
+/*UPDATED STYLES*/
+
+
+.styles-updated .panel-body{
+    padding: 10px;
+}
+.styles-updated div[class^='col-md-']{
+    padding: 0;
+}
+.styles-updated div[class^='col-md-'] img{text-align: center;}
+.styles-updated div[class^='col-md-'] .row{margin: 0;}
+.styles-updated div[class^='col-md-'] .calc{
+    margin: 0 0 10px;
+}
+.styles-updated div.col-md-8_half .row{margin: 0;}
+.styles-updated .label{
+    padding: 6px 9px;
+}
+.styles-updated .calc .btn{margin-left: 10px;}
+.ico-calc{
+    width: 13px;
+    height: 18px;
+    font-size: 0;
+    line-height: 0;
+    display: inline-block;
+    /*background: asset_url('ico-calc.png') no-repeat;*/
+    vertical-align: top;
+    margin-top: 2px;
+}
+.vertical-styles p{margin: 0;}
+.row.vertical-styles{
+    display: table;
+    width: 100%;
+}
+.row.vertical-styles > div[class^='col-md-']{
+    display: table-cell;
+    vertical-align: middle;
+    float: none;
+}
+/*@media (min-width: 992px) { */
+    .styles-updated .col-md-1_half{
+        width: 12.6667%;
+        float: left;
+    }
+    .col-md-0{
+        float: left;
+        width: 4.6667%;
+    }
+    .styles-updated .col-md-8_half{
+        float: left;
+        width: 69.6667%;
+        padding-left: 10px !important;
+    }
+    .styles-updated .col-md-9_half{
+        float: right;
+        width: 74%;
+    }
+/*}*/
+/*
+@media (max-width: 992px) {
+    .row{margin-bottom: 10px !important;}
+}*/
+.glyphicon-arrow-up{color: #5cb85c;}
+.glyphicon-arrow-down{color: #d9534f;}
+.glyphicon-arrow-up.gray{color: #aaaaaa;}
+.glyphicon-arrow-down.gray{color: #aaaaaa;}
+
+#Sports .modal-body ul li {
+  float: left;
+  width: 50%;
+}
+
+body.calculator{min-width: 615px;}
+
+.container-fluid{
+    padding: 15px;
+}
+.btn-holder{
+    width: 100%;
+    overflow: hidden;
+}
+.btn-holder.calculate .btn{margin-left: 10px;}
+.calculator .glyphicon-file{
+    color: #666;
+}
+.calculator input[type="text"]{
+    width: 80px;
+    display: inline-block;
+}
+.calculator .head {
+    width: 100%;
+    overflow: hidden;
+}
+.calculator .head h2{
+    font-size: 24px;
+    margin: 0;
+}
+.calculator .head h2 small{
+    display: block;
+}
+.calculator .head h4{
+    font-size: 14px;
+    margin: 0;
+}
+
+.middle {
+  background-color: #FFFDDB
+}
+
+.middle .percent {
+  position: relative;
+}
+
+.middle-value {
+  position: absolute;
+  top: 15px;
+}
+
+.report_arb span {
+  position: relative;
+}
+
+.report_arb span.label {
+  position: absolute;
+  padding: 3px;
+  top: 12px;
+}
+
+input[name='stake_fix'] {
+  display: inline;
+}
+
+input[type='checkbox'], input[type='radio'] {
+  vertical-align: top;
+}
+input[type='checkbox'] {
+  margin-top: 5px;
+}
+
+.calculator table.table {
+  min-width: 815px;
+}
+
+.calculator input[type="text"] {
+  width: 80px;
+  display: inline-block;
+}
+
+#Bookmakers .modal-body ul li {
+  float: left;
+  width: 33%;
+}
+
+#Sports .modal-body ul li.check-all {
+  float: left;
+  width: 100%;
+  margin-top: 15px;
+}
+
+#Sports .modal-body ul li ul.dropdown-menu-form li {
+  float: none;
+  width: auto;
+}
+
+/*#Sports .modal-body ul li {*/
+  /*float: left;*/
+  /*width: 50%;*/
+
+  /*label.btn {*/
+    /*width: 160px;*/
+  /*}*/
+/*}*/

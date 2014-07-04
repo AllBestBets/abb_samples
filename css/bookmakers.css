@@ -1,0 +1,468 @@
+/* line 1, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.bookmark {
+  background: url(../images/bookmakers.png) no-repeat;
+  display: block;
+  height: 16px;
+  width: 75px;
+  text-indent: -9999px;
+}
+
+/* line 8, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b11 {
+  background-position: 0 -11px;
+}
+
+/* betfair */
+/* line 9, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b1 {
+  background-position: 0 -37px;
+}
+
+/* pinnacle */
+/* line 10, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.bx {
+  background-position: 0 -63px;
+}
+
+/* line 11, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b17 {
+  background-position: 0 -89px;
+}
+
+/* parimatch */
+/* line 12, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b2 {
+  background-position: 0 -114px;
+}
+
+/* betcity */
+/* line 13, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.bx {
+  background-position: 0 -140px;
+}
+
+/* line 14, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b9 {
+  background-position: 0 -166px;
+}
+
+/* bwin */
+/* line 15, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b23 {
+  background-position: 0 -191px;
+}
+
+/* bet-at-home */
+/* line 16, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.bx {
+  background-position: 0 -217px;
+}
+
+/* line 17, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.bx {
+  background-position: 0 -243px;
+}
+
+/* line 18, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b14 {
+  background-position: 0 -269px;
+}
+
+/* expect */
+/* line 19, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.bx {
+  background-position: 0 -294px;
+}
+
+/* line 20, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b13 {
+  background-position: 0 -320px;
+}
+
+/* line 21, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b13 {
+  background-position: 0 -346px;
+}
+
+/* william hill */
+/* line 22, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.bx {
+  background-position: 0 -371px;
+}
+
+/* line 23, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b19 {
+  background-position: 0 -397px;
+}
+
+/* unibet */
+/* line 24, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b4 {
+  background-position: 0 -424px;
+}
+
+/* marathon */
+/* line 25, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b18 {
+  background-position: 0 -449px;
+}
+
+/* line 26, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.bx {
+  background-position: 0 -474px;
+}
+
+/* line 27, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b20 {
+  background-position: 0 -500px;
+}
+
+/* line 28, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b21 {
+  background-position: 0 -526px;
+}
+
+/* line 29, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.bx {
+  background-position: 0 -551px;
+}
+
+/* line 30, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.bx {
+  background-position: 0 -577px;
+}
+
+/* line 31, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.bx {
+  background-position: 0 -603px;
+}
+
+/* nox win */
+/* line 32, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b25 {
+  background-position: 0 -628px;
+}
+
+/* line 33, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.bx {
+  background-position: 0 -654px;
+}
+
+/* line 34, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b27 {
+  background-position: 0 -680px;
+}
+
+/* line 35, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b28 {
+  background-position: 0 -706px;
+}
+
+/* line 36, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b29 {
+  background-position: 0 -731px;
+}
+
+/* line 37, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b24 {
+  background-position: 0 -757px;
+}
+
+/* 10bet */
+/* line 38, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b31 {
+  background-position: 0 -783px;
+}
+
+/* line 39, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b32 {
+  background-position: 0 -809px;
+}
+
+/* line 40, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b33 {
+  background-position: 0 -835px;
+}
+
+/* line 41, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b34 {
+  background-position: 0 -861px;
+}
+
+/* line 42, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b35 {
+  background-position: 0 -885px;
+}
+
+/* line 43, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b36 {
+  background-position: 0 -911px;
+}
+
+/* line 44, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b37 {
+  background-position: 0 -936px;
+}
+
+/* line 45, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b38 {
+  background-position: 0 -961px;
+}
+
+/* line 46, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b30 {
+  background-position: 0 -986px;
+}
+
+/* leon */
+/* line 47, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b40 {
+  background-position: 0 -1011px;
+}
+
+/* line 48, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b41 {
+  background-position: 0 -1036px;
+}
+
+/* line 49, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b5 {
+  background-position: 0 -1062px;
+}
+
+/* 188bet */
+/* line 50, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b10 {
+  background-position: 0 -1087px;
+}
+
+/* bet365 */
+/* line 51, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b44 {
+  background-position: 0 -1112px;
+}
+
+/* line 52, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b45 {
+  background-position: 0 -1137px;
+}
+
+/* line 53, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b46 {
+  background-position: 0 -1162px;
+}
+
+/* line 54, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b47 {
+  background-position: 0 -1187px;
+}
+
+/* line 55, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b48 {
+  background-position: 0 -1212px;
+}
+
+/* line 56, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b49 {
+  background-position: 0 -1237px;
+}
+
+/* line 57, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b50 {
+  background-position: 0 -1262px;
+}
+
+/* line 58, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b51 {
+  background-position: 0 -1287px;
+}
+
+/* line 59, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b52 {
+  background-position: 0 -1312px;
+}
+
+/* line 60, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b53 {
+  background-position: 0 -1337px;
+}
+
+/* line 61, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b54 {
+  background-position: 0 -1362px;
+}
+
+/* line 62, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b55 {
+  background-position: 0 -1387px;
+}
+
+/* line 63, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b56 {
+  background-position: 0 -1412px;
+}
+
+/* line 64, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b57 {
+  background-position: 0 -1436px;
+}
+
+/* line 65, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b58 {
+  background-position: 0 -1462px;
+}
+
+/* line 66, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b59 {
+  background-position: 0 -1487px;
+}
+
+/* line 67, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b60 {
+  background-position: 0 -1512px;
+}
+
+/* line 68, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b61 {
+  background-position: 0 -1537px;
+}
+
+/* line 69, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b62 {
+  background-position: 0 -1562px;
+}
+
+/* line 70, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b63 {
+  background-position: 0 -1587px;
+}
+
+/* line 71, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b64 {
+  background-position: 0 -1612px;
+}
+
+/* line 72, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b65 {
+  background-position: 0 -1637px;
+}
+
+/* line 73, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b66 {
+  background-position: 0 -1662px;
+}
+
+/* line 74, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b67 {
+  background-position: 0 -1687px;
+}
+
+/* line 75, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b68 {
+  background-position: 0 -1712px;
+}
+
+/* line 76, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b69 {
+  background-position: 0 -1737px;
+}
+
+/* line 77, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b70 {
+  background-position: 0 -1762px;
+}
+
+/* line 78, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b6 {
+  background-position: 0 -1787px;
+}
+
+/* fonbet */
+/* line 79, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b72 {
+  background-position: 0 -1812px;
+}
+
+/* line 80, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b73 {
+  background-position: 0 -1837px;
+}
+
+/* line 81, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b22 {
+  background-position: 0 -1862px;
+}
+
+/* favbet */
+/* line 82, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b75 {
+  background-position: 0 -1887px;
+}
+
+/* line 83, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b76 {
+  background-position: 0 -1912px;
+}
+
+/* line 84, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b77 {
+  background-position: 0 -1937px;
+}
+
+/* line 85, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b78 {
+  background-position: 0 -1962px;
+}
+
+/* line 86, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b79 {
+  background-position: 0 -1987px;
+}
+
+/* line 87, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b80 {
+  background-position: 0 -2012px;
+}
+
+/* line 88, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b7 {
+  background-position: 0 -2037px;
+}
+
+/* offsidebet */
+/* line 89, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b8 {
+  background-position: 0 -2062px;
+}
+
+/* baltbet */
+/* line 90, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b15 {
+  background-position: 0 -2087px;
+}
+
+/* zenit */
+/* line 91, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b16 {
+  background-position: 0 -2113px;
+}
+
+/* tennisi */
+/* line 92, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b12 {
+  background-position: 0 -2137px;
+}
+
+/* sportingbet */
+/* line 93, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b3 {
+  background-position: 0 -2162px;
+}
+
+/* sbobet */
+/* line 94, ../../app/assets/stylesheets/bookmakers.css.scss */
+.results.content-box table a.b26 {
+  background-position: 0 -2187px;
+}
+
+/* tipstery */
