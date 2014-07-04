@@ -79,7 +79,7 @@ App = {
 
                 for (e in a) {
                     d = "notify." + e;
-                    b += "<source src='/media/" + d + "' type='" + a[e] + "'>";
+                    b += "<source src='media/" + d + "' type='" + a[e] + "'>";
                 }
 
                 b += "</audio>";
@@ -89,7 +89,7 @@ App = {
             document.getElementById("html5-beep").play();
 
         } else {
-            $("#notify").html('<audio autoplay="autoplay"><source src="/media/notify.mp3" type="audio/mpeg" /><source src="/media/notify.ogg" type="audio/ogg" /><embed hidden="true" autostart="true" loop="false" src="/media/notify.mp3" /></audio>');
+            $("#notify").html('<audio autoplay="autoplay"><source src="media/notify.mp3" type="audio/mpeg" /><source src="media/notify.ogg" type="audio/ogg" /><embed hidden="true" autostart="true" loop="false" src="/media/notify.mp3" /></audio>');
         }
         return false;
     }
