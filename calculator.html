@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <meta charset='utf-8'>
     <title>Allbestbets</title>
     <link href="css/styles.css" rel="stylesheet" media="screen">
@@ -21,32 +21,32 @@
     <script src="js/underscore.string.js" type="text/javascript"></script>
     <script src="js/backbone.js" type="text/javascript"></script>
     <script src="js/ZeroClipboard.js" type="text/javascript"></script>
-</head>
-<body>
-<div id='calculator'>
-    <div class='container-fluid'>
+  </head>
+  <body>
+    <div id='calculator'>
+      <div class='container-fluid'>
         <div class='row-fluid'>
-            <div class='flash'>
-            </div>
-            <div class='calculator'>
-            </div>
+          <div class='flash'>
+          </div>
+          <div class='calculator'>
+          </div>
         </div>
+      </div>
     </div>
-</div>
 
 
-<script type='text/template' id='calculator-template'>
-    <input id="formula" name="formula" type="hidden" value="<%= arb.arb_formula().get('calc_formula') %>"></input>
-    <input id="percent" name="percent" type="hidden" value="<%= calc.percent %>"></input>
+    <script type='text/template' id='calculator-template'>
+      <input id="formula" name="formula" type="hidden" value="<%= arb.arb_formula().get('calc_formula') %>"></input>
+      <input id="percent" name="percent" type="hidden" value="<%= calc.percent %>"></input>
 
-    <div class="head">
-        <h2 class="pull-right text-success">
+        <div class="head">
+          <h2 class="pull-right text-success">
             <small>
-                <%= I18n.t('arb.Profit Percent') %>
-                <span id="percent_display"><%= calc.percent %>%</span>
+              <%= I18n.t('arb.Profit Percent') %>
+              <span id="percent_display"><%= calc.percent %>%</span>
             </small>
-        </h2>
-        <h2>
+          </h2>
+          <h2>
             <span class="exclude_event" event="<%= arb.get('event_id') %>" title="<%= I18n.t('arb.Delete event') %>">
               x
             </span>
@@ -55,252 +55,228 @@
             </span>
             <br/>
             <small>
-                <%= arb.get('league') + " " + I18n.t("bet." +
-                App.Models.Bet.period_name_by_sport(arb.bets[0].period().get('identifier'), arb.get('sport_id'))) %>
+              <%= arb.get('league') + " " + I18n.t("bet." + App.Models.Bet.period_name_by_sport(arb.bets[0].period().get('identifier'), arb.get('sport_id'))) %>
             </small>
-        </h2>
-        <h4>
+          </h2>
+          <h4>
             <span class="utc_withyear" data-utc="<%= arb.get('started_at') * 1000 %>">
               <%= "(" + arb.get('started_at') * 1000 + ")" %>
             </span>
-        </h4>
-    </div>
-    <div class="calc">
-        <div class="holder">
+          </h4>
+        </div>
+        <div class="calc">
+          <div class="holder">
             <div class="box">
-                <table class="table table-condensed">
-                    <thead>
+              <table class="table table-condensed">
+                <thead>
+                  <tr>
+                    <th colspan="2">
+                    </th>
+                    <th>
+                      <%= I18n.t('bet.Koef') %>
+                    </th>
+                    <th>
+                      <%= I18n.t('bet.Commission') %>
+                    </th>
+                    <th>
+                      <%= I18n.t('arb.Round to') %>
+                    </th>
+                    <th colspan="4">
+                      <%= I18n.t('calculator.Stake') %>
+                    </th>
+                    <th class="center">
+                      <%= I18n.t('calculator.Revenue') %>
+                    </th>
+                    <th>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr outcome="1">
+                    <%= calculator_outcome_template({outcome: arb.outcome1, init: init, access_token: access_token, pos: 1, arb: arb, calc: calc, currencies: currencies, usd: usd, bookmaker_currencies: bookmaker_currencies}) %>
+                    <td>
+                      <button class="close exclude_bet" type="button" bet="<%= arb.outcome1.id %>" 'aria-hidden'=true} >
+                          &times;
+                      </button>
+                    </td>
+                  </tr>
+                  <% if (arb.outcome1.get('is_lay')) { %>
                     <tr>
-                        <th colspan="2">
-                        </th>
-                        <th>
-                            <%= I18n.t('bet.Koef') %>
-                        </th>
-                        <th>
-                            <%= I18n.t('bet.Commission') %>
-                        </th>
-                        <th>
-                            <%= I18n.t('arb.Round to') %>
-                        </th>
-                        <th colspan="4">
-                            <%= I18n.t('calculator.Stake') %>
-                        </th>
-                        <th class="center">
-                            <%= I18n.t('calculator.Revenue') %>
-                        </th>
-                        <th>
-                        </th>
+                      <%= calculator_outcome_lay_template({outcome: arb.outcome1, pos: 1}) %>
                     </tr>
-                    </thead>
-                    <tbody>
-                    <tr outcome="1">
-                        <%= calculator_outcome_template({outcome: arb.outcome1, init: init, access_token: access_token,
-                        pos: 1, arb: arb, calc: calc, currencies: currencies, usd: usd, bookmaker_currencies:
-                        bookmaker_currencies}) %>
-                        <td>
-                            <button class="close exclude_bet" type="button" bet="<%= arb.outcome1.id %>"
-                            'aria-hidden'=true} >
-                            &times;
-                            </button>
-                        </td>
-                    </tr>
-                    <% if (arb.outcome1.get('is_lay')) { %>
+                  <% } %>
+                  <tr outcome="2">
+                    <%= calculator_outcome_template({outcome: arb.outcome2, init: init == 2, access_token: access_token, pos: 2, arb: arb, calc: calc, currencies: currencies, usd: usd, bookmaker_currencies: bookmaker_currencies}) %>
+                    <td>
+                      <button class="close exclude_bet" type="button" bet="<%= arb.outcome2.id %>" 'aria-hidden'=true} >
+                          &times;
+                      </button>
+                    </td>
+                  </tr>
+                  <% if (arb.outcome2.get('is_lay')) { %>
                     <tr>
-                        <%= calculator_outcome_lay_template({outcome: arb.outcome1, pos: 1}) %>
+                      <%= calculator_outcome_lay_template({outcome: arb.outcome2, pos: 2}) %>
                     </tr>
-                    <% } %>
-                    <tr outcome="2">
-                        <%= calculator_outcome_template({outcome: arb.outcome2, init: init == 2, access_token:
-                        access_token, pos: 2, arb: arb, calc: calc, currencies: currencies, usd: usd,
-                        bookmaker_currencies: bookmaker_currencies}) %>
-                        <td>
-                            <button class="close exclude_bet" type="button" bet="<%= arb.outcome2.id %>"
-                            'aria-hidden'=true} >
-                            &times;
-                            </button>
-                        </td>
-                    </tr>
-                    <% if (arb.outcome2.get('is_lay')) { %>
-                    <tr>
-                        <%= calculator_outcome_lay_template({outcome: arb.outcome2, pos: 2}) %>
-                    </tr>
-                    <% } %>
-                    <% if (arb.outcome3) { %>
+                  <% } %>
+                  <% if (arb.outcome3) { %>
                     <tr outcome="3">
-                        <%= calculator_outcome_template({outcome: arb.outcome3, init: init == 3, access_token:
-                        access_token, pos: 3, arb: arb, calc: calc, currencies: currencies, usd: usd,
-                        bookmaker_currencies: bookmaker_currencies}) %>
-                        <td>
-                            <button class="close exclude_bet" type="button" bet="<%= arb.outcome3.id %>"
-                            'aria-hidden'=true} >
+                      <%= calculator_outcome_template({outcome: arb.outcome3, init: init == 3, access_token: access_token, pos: 3, arb: arb, calc: calc, currencies: currencies, usd: usd, bookmaker_currencies: bookmaker_currencies}) %>
+                      <td>
+                        <button class="close exclude_bet" type="button" bet="<%= arb.outcome3.id %>" 'aria-hidden'=true} >
                             &times;
-                            </button>
-                        </td>
+                        </button>
+                      </td>
                     </tr>
                     <% if (arb.outcome3.get('is_lay')) { %>
-                    <tr>
+                      <tr>
                         <%= calculator_outcome_lay_template({outcome: arb.outcome3, pos: 3}) %>
-                    </tr>
+                      </tr>
                     <% } %>
 
-                    <% } %>
-                    <tr>
-                        <td colspan="2">
-                            <%= I18n.t('arb.Round stakes to') %>
-                            :
-                        </td>
-                        <td colspan="3">
-                            <input class="koef form-control input-sm" id="round_stake" type='text'
-                                   value="<%= round_stake %>"></input>
-                        </td>
-                        <td colspan="2">
-                            <input class="stake form-control input-sm" id="total_stake" type='text' value="100"></input>
-                        </td>
-                        <td>
-                            <select class='rate sel' name='currency' id="total_currency" data-bookmaker_id=0>
-                                <% currencies.each(function (c) { %>
-                                <option value="<%= c.id %>" checked="<%= c.id == usd %>">
-                                    <%= c.get('code') %>
-                                </option>
-                                <% }) %>
-                            </select>
-                            <input id="total_rate" name="total_rate" type="hidden" value="1"></input>
-                        </td>
-                        <td>
-                            <input checked="<%= true %>" class="radio" id="total_stake_fix" name="stake_fix"
-                                   type="radio" value="total"></input>
-                        </td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    </tbody>
-                </table>
-                <div class="btn-holder calculate">
-                    <button class="btn btn-success pull-right">
-                        <%= I18n.t('arb.Calculate') %>
-                    </button>
-                    <button class="btn btn-primary pull-right" id="copy_button" title="Копировать">
-                        Копировать
-                    </button>
-                </div>
+                  <% } %>
+                  <tr>
+                    <td colspan="2">
+                      <%= I18n.t('arb.Round stakes to') %>
+                      :
+                    </td>
+                    <td colspan="3">
+                      <input class="koef form-control input-sm" id="round_stake" type='text' value="<%= round_stake %>"></input>
+                    </td>
+                    <td colspan="2">
+                      <input class="stake form-control input-sm" id="total_stake" type='text' value="100"></input>
+                    </td>
+                    <td>
+                      <select class='rate sel' name='currency' id="total_currency" data-bookmaker_id=0>
+                        <% currencies.each(function (c) { %>
+                          <option value="<%= c.id %>" checked="<%= c.id == usd %>">
+                          <%= c.get('code') %>
+                          </option>
+                          <%  }) %>
+                      </select>
+                      <input id="total_rate" name="total_rate" type="hidden" value="1"></input>
+                    </td>
+                    <td>
+                      <input checked="<%= true %>" class="radio" id="total_stake_fix" name="stake_fix" type="radio" value="total"></input>
+                    </td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="btn-holder calculate">
+                <button class="btn btn-success pull-right">
+                  <%= I18n.t('arb.Calculate') %>
+                </button>
+                <button class="btn btn-primary pull-right" id="copy_button" title="Копировать">
+                  Копировать
+                </button>
+              </div>
             </div>
+          </div>
         </div>
-    </div>
-</script>
-<script type='text/template' id='no-arb-template'>
-    <div class="calculator">
-        <div class="calc">
-            <div class="holder">
-                <div class="box">
-                    Извините, вилка более не доступна
-                </div>
+      </script>
+      <script type='text/template' id='no-arb-template'>
+      <div class="calculator"><div class="calc">
+          <div class="holder">
+            <div class="box">
+              Извините, вилка более не доступна
             </div>
+          </div>
         </div>
-    </div>
-    <button id="copy_button" style="display:none;" title="Копировать"></button>
-</script>
-<script type='text/template' id='outcome-template'>
-    <td class="outcome <%= init ? 'init' : ''%>">
-        <a href="<%= Routes.go_bookmaker_path(outcome.bookmaker()) %>" target='_blank'>
+      </div>
+      <button id="copy_button" style="display:none;" title="Копировать"></button>
+    </script>
+    <script type='text/template' id='outcome-template'>
+      <td class="outcome <%= init ? 'init' : ''%>">
+          <a href="<%= Routes.go_bookmaker_path(outcome.bookmaker()) %>" target='_blank'>
             <%= outcome.display_original_value() %>
-        </a>
-    </td>
-
-    <td class='bookmaker'>
+          </a>
+      </td>
+      
+      <td class='bookmaker'>
         <% if (access_token) { %>
-        <select class='same_bets' id="<%= outcome.id %>" sport_id="<%= arb.get('sport_id') %>"
-                event_id="<%= arb.get('event_id') %>" number="<%= pos %>">
-            <option value="<%= outcome.id %>">
+            <select class='same_bets' id="<%= outcome.id %>" sport_id="<%= arb.get('sport_id') %>" event_id="<%= arb.get('event_id') %>" number="<%= pos %>">
+              <option value="<%= outcome.id %>">
                 <%= outcome.bookmaker().get('name') + ": " + outcome.get('koef') %>
-            </option>
-        </select>
-        <a class="same_bets_refresh icon-refresh" href='javascript:void(0);'
-           title="<%= I18n.t('arb.Show same bets') %>">
-        </a>
+              </option>
+            </select>
+            <a class="same_bets_refresh icon-refresh" href='javascript:void(0);' title="<%= I18n.t('arb.Show same bets') %>">
+            </a>
         <% } else { %>
-        <a href="<%= Routes.go_bookmaker_path(outcome.bookmaker()) %>" target='_blank'>
-            <%= outcome.bookmaker().get('name') %>
-        </a>
-        <% } %>
-    </td>
-    <td>
-        <input class="koef form-control input-sm" id="outcome<%= pos %>_koef" type='text'
-               value="<%= outcome.get('koef') %>"></input>
+            <a href="<%= Routes.go_bookmaker_path(outcome.bookmaker()) %>" target='_blank'>
+              <%= outcome.bookmaker().get('name') %>
+            </a>
+        <% } %> 
+      </td>
+      <td>
+        <input class="koef form-control input-sm" id="outcome<%= pos %>_koef" type='text' value="<%= outcome.get('koef') %>"></input>
         <% if (access_token) { %>
-        <a class="same_bets_refresh glyphicon glyphicon-refresh" href='javascript:void(0);'
-           title="<%= I18n.t('arb.Refresh Coefficient') %>"></a>
-        <% } %>
-    </td>
-    <td>
-        <input class='commission form-control input-sm' id="outcome<%= pos %>_commission" type='text'
-               name="outcome<%= pos %>_commission" value="<%= outcome.get('commission') %>"></input>
+          <a class="same_bets_refresh glyphicon glyphicon-refresh" href='javascript:void(0);' title="<%= I18n.t('arb.Refresh Coefficient') %>"></a>
+          <% } %>
+      </td>
+      <td>
+        <input class='commission form-control input-sm' id="outcome<%= pos %>_commission" type='text' name="outcome<%= pos %>_commission" value="<%= outcome.get('commission') %>"></input>
         <span id="outcome<%= pos %>_koef_static"></span>
-    </td>
-    <td>
-        <input class="round form-control input-sm stake_<%= outcome.get('bookmaker_id')  %>" type='text'
-               id="outcome<%= pos %>_round"></input>
-    </td>
-    <td>
-        <input class="stake form-control input-sm stake_<%= outcome.get('bookmaker_id')  %>" type='text'
-               id="outcome<%= pos %>_stake"></input>
-    </td>
-    <td>
+      </td>
+      <td>
+        <input class="round form-control input-sm stake_<%= outcome.get('bookmaker_id')  %>" type='text' id="outcome<%= pos %>_round"></input>
+      </td>      
+      <td>
+        <input class="stake form-control input-sm stake_<%= outcome.get('bookmaker_id')  %>" type='text' id="outcome<%= pos %>_stake"></input>
+      </td>
+      <td>
         <button class="clipboard" id="outcome<%= pos %>_copy" title="<%= I18n.t('arb.Copy amount') %>">
-            <img src="/assets/copy.png">
+          <img src="/assets/copy.png">
         </button>
-    </td>
-    <td>
+      </td>
+      <td>
         <% if (bookmaker_currencies && bookmaker_currencies[outcome.get('bookmaker_id')]) { %>
-        <% currency_id = parseInt(bookmaker_currencies[outcome.get('bookmaker_id')]) %>
-        <% } else { %>
-        <% currency_id = usd %>
+        <%    currency_id = parseInt(bookmaker_currencies[outcome.get('bookmaker_id')]) %>
+        <%  } else { %>
+        <%    currency_id = usd %>
         <% } %>
 
-        <select class='rate sel' name='currency' id="outcome<%= pos %>_currency"
-                data-bookmaker_id="<%= outcome.get('bookmaker_id') %>">
-            <% currencies.each(function (c) { %>
+        <select class='rate sel' name='currency' id="outcome<%= pos %>_currency" data-bookmaker_id="<%= outcome.get('bookmaker_id') %>">
+          <% currencies.each(function (c) { %>
             <option value="<%= c.id %>" checked="<%= c.id == currency_id %>">
-                <%= c.get('code') %>
+              <%= c.get('code') %>
             </option>
-            <% }) %>
+          <%  }) %>
         </select>
         <input id="outcome<%= pos %>_rate" name="outcome<%= pos %>_rate" type="hidden" value="1"></input>
-    </td>
-    <td>
+      </td>
+      <td>
         <input class='radio' type='radio' name='stake_fix' value="<%= pos %>" id="outcome<%= pos %>_stake_fix"></input>
-        <input type='hidden' name="outcome<%= pos %>_stake_percent" id="outcome<%= pos %>_stake_percent"
-               value="<%= calc.stakes[pos-1] %>"></input>
+        <input type='hidden' name="outcome<%= pos %>_stake_percent" id="outcome<%= pos %>_stake_percent" value="<%= calc.stakes[pos-1] %>"></input>
 
-        <input class='distr' type='checkbox' name='outcome<%= pos %>_stake_distr' value="<%= pos %>"
-               id="outcome<%= pos %>_stake_distr" checked='checked'></input>
-    </td>
-    <td>
+        <input class='distr' type='checkbox' name='outcome<%= pos %>_stake_distr' value="<%= pos %>" id="outcome<%= pos %>_stake_distr" checked='checked'></input>
+      </td>
+      <td>
         <h4 class="text-success" id="revenue<%= pos %>">
-            20
-            </h2>
-    </td>
+          20
+        </h2>
+      </td>
 
-</script>
-<script type='text/template' id='outcome-lay-template'>
-    <td></td>
-    <td>
+    </script>
+    <script type='text/template' id='outcome-lay-template'>
+      <td></td>
+      <td>
         <%= I18n.t('bet.against') %>
-    </td>
-    <td>
-        <input class="koef_lay form-control input-sm" id="outcome<%= pos %>_koef_lay" type='text'
-               value="<%= outcome.get('koef_lay') %>"></input>
-    </td>
-    <td></td>
-    <td colspan="2">
+      </td>
+      <td>
+        <input class="koef_lay form-control input-sm" id="outcome<%= pos %>_koef_lay" type='text' value="<%= outcome.get('koef_lay') %>"></input>
+      </td>
+      <td></td>
+      <td colspan="2">
         <input class="stake_lay form-control input-sm" id="outcome<%= pos %>_stake_lay" type='text'></input>
-    </td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-</script>
-</body>
-<script src="js/abb.js" type="text/javascript"></script>
-<script src="js/abb_calculator.js" type="text/javascript"></script>
-<script src="js/calculator.js" type="text/javascript"></script>
+      </td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </script>
+  </body>
+  <script src="js/abb.js" type="text/javascript"></script>
+  <script src="js/abb_calculator.js" type="text/javascript"></script>
+  <script src="js/calculator.js" type="text/javascript"></script>
 </html>
