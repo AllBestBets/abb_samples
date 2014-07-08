@@ -238,7 +238,8 @@ FilterView = Backbone.View.extend({
         "click .apply-button": "apply",
         "click .check-all": "check_all",
         "change #grouped": "grouped_change",
-        "click .submit-report": "send_arb_report"
+        "click .submit-report": "send_arb_report",
+        "change #notification_popup": "request_permission"
     },
 
     initialize: function () {
@@ -337,6 +338,13 @@ FilterView = Backbone.View.extend({
                 if ($("#notification_sound[type='checkbox']").prop("checked")) {
                     App.playSound();
                 }
+                if ($("#notification_popup[type='checkbox']").prop("checked")) {
+                    $.each(diff, function(i, v){
+                        var arb=App.arbs.findWhere({arb_hash:v});
+                        var notif = arb.to_notification();
+                        desktop_notif(false, notif.title, notif.text);
+                    });
+                }
             }
 
             App.stats = {
@@ -402,6 +410,10 @@ FilterView = Backbone.View.extend({
     load_stats: function () {
         $("#stats_count").text(App.stats.total);
         $("#stats_percent").text(_("%.1f").sprintf(App.stats.max_percent || 0) + '%');
+    },
+
+    request_permission: function() {
+        RequestPermission();
     }
 });
 
