@@ -1,31 +1,34 @@
 RequestPermission = function (callback) {
-    return window.webkitNotifications.requestPermission(callback);
+    return window.Notification.requestPermission(callback);
 };
 
 desktop_notif = function (href, title, text) {
-    var notification1;
-    if (window.webkitNotifications) {
-        if (window.webkitNotifications.checkPermission() > 0) {
-            return RequestPermission(desktop_notif);
-        } else {
-            if (!title) {
-                title = 'Test';
-            }
-            if (!text) {
-                text = 'sample notification';
-            }
-            notification1 = window.webkitNotifications.createNotification('allbestbets.png', title, text);
-            notification1.ondisplay = function (event) {
-                return setTimeout((function () {
-                    return event.currentTarget.cancel();
-                }), 3000);
-            };
-            notification1.onclick = function (x) {
-                simplepopup(href, 950, 450);
-                return false;
-            };
-            return notification1.show();
+    if (!("Notification" in window)) {
+        alert("This browser does not support desktop notification");
+    }
+    else if (Notification.permission === "granted") {
+        if (!title) {
+            title = 'Test';
         }
+        if (!text) {
+            text = 'sample notification';
+        }
+        var notification = new Notification(title, {body: text, icon: 'ico/apple-touch-icon-72-precomposed.png'});
+        notification.onshow = function (event) {
+            return setTimeout((function () {
+                notification.close();
+            }), 3000);
+        };
+        if(href) {
+            notification.onclick = function (x) {
+                simplepopup(href, 950, 450);
+            };
+        }
+    }
+    else if (Notification.permission !== 'denied') {
+        RequestPermission(function(){
+            desktop_notif(href, title, text);
+        });
     }
 };
 
