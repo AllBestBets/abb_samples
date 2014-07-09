@@ -339,11 +339,9 @@ FilterView = Backbone.View.extend({
                     App.playSound();
                 }
                 if ($("#notification_popup[type='checkbox']").prop("checked")) {
-                    $.each(diff, function(i, v){
-                        var arb=App.arbs.findWhere({arb_hash:v});
-                        var notif = arb.to_notification();
-                        desktop_notif(false, notif.title, notif.text);
-                    });
+                    var arb=App.arbs.findWhere({arb_hash:diff[0]});
+                    var notif = arb.to_notification();
+                    desktop_notif(_this.arb_view.calculator_url(arb), notif.title, notif.text);
                 }
             }
 
