@@ -200,7 +200,7 @@ Routes = {
             bookmaker2_name = this.bet2().bookmaker().get('name');
             text = "" + (this.get('event_name')) + " (" + bookmaker1_name + "-" + bookmaker2_name;
             if (this.bet3() != null) {
-                bookmaker3_name = this.bet3().get('name');
+                bookmaker3_name = this.bet3().bookmaker().get('name');
                 text += "-" + bookmaker3_name;
             }
             text += ")";
