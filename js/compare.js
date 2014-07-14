@@ -226,42 +226,58 @@ App.Views.Bets = Backbone.View.extend({
         var market, period, _this = this;
         market = App.compare_controller.markets_view.market;
         period = App.compare_controller.markets_view.periods_view ? App.compare_controller.markets_view.periods_view.period.get('identifier') : 0;
-        $.get(this.model.url() + ("/markets/" + market.id + "/periods/" + period + "/bets"), function (data) {
-            var all_bets;
-            data.market = market;
-            data.event = _this.model;
-            data.sort_variation || (data.sort_variation = market.market_variations()[0]);
-            title_template = _.template($('#event-title-template').html())
-            $("#filters .title").html(title_template(data));
-            all_bets = _(data.sport.country.league.event.market.period.outcome).reduce(function (bets, o) {
-                _(o.bet).max(function (b) {
-                    return b.odd;
-                }).best = true;
-                return bets.concat(_(o.bet).map(function (b) {
-                    if ((o.value != null) && /(F2|EH2)/.test(o.variation)) {
-                        b.value = -o.value;
-                    } else {
-                        b.value = o.value;
+        if(market) {
+            $.get(this.model.url() + ("/markets/" + market.id + "/periods/" + period + "/bets"), function (data) {
+                var all_bets;
+                data.market = market;
+                data.event = _this.model;
+                data.sort_variation || (data.sort_variation = market.market_variations()[0]);
+                title_template = _.template($('#event-title-template').html())
+                $("#filters .title").html(title_template(data));
+                all_bets = _(data.sport.country.league.event.market.period.outcome).reduce(function (bets, o) {
+                    _(o.bet).max(function (b) {
+                        return b.odd;
+                    }).best = true;
+                    return bets.concat(_(o.bet).map(function (b) {
+                        if ((o.value != null) && /(F2|EH2)/.test(o.variation)) {
+                            b.value = -o.value;
+                        } else {
+                            b.value = o.value;
+                        }
+                        b.variation = o.variation;
+                        return b;
+                    }));
+                }, []);
+                data.values = {};
+                return _.chain(all_bets).groupBy('value').map(function (b, value) {
+                    if (value === 'null') {
+                        value = null;
                     }
-                    b.variation = o.variation;
-                    return b;
-                }));
-            }, []);
-            data.values = {};
-            return _.chain(all_bets).groupBy('value').map(function (b, value) {
-                if (value === 'null') {
-                    value = null;
-                }
-                if (/CS/.test(market.get('short_title'))) {
-                    value = _("%.1f").sprintf(parseFloat(value)).replace(/\./, ':');
-                } else {
-                    value = _this.format_value(value);
-                }
-                data.values[value] = _.chain(b).groupBy('bookmaker').value();
-                _this.data = data;
-                return _this.render_view();
+                    if (/CS/.test(market.get('short_title'))) {
+                        value = _("%.1f").sprintf(parseFloat(value)).replace(/\./, ':');
+                    } else {
+                        value = _this.format_value(value);
+                    }
+                    data.values[value] = _.chain(b).groupBy('bookmaker').value();
+                    _this.data = data;
+                    return _this.render_view();
+                });
             });
-        });
+        }else{
+            data = {};
+            data.sport = App.compare_controller.sport.toJSON();
+            data.sport.country = App.compare_controller.country.toJSON();
+            data.sport.country.league = App.compare_controller.league.toJSON();
+            data.sport.country.league.event = App.compare_controller.league_view.event.toJSON();
+            data.sport.country.league.event.market = {};
+            data.sport.country.league.event.market.period = {};
+            data.sport.country.league.event.market.period.outcome = [];
+            title_template = _.template($('#event-title-template').html());
+            $("#filters .title").html(title_template(data));
+            data.event = false;
+            _this.data = data;
+            return _this.render_view();
+        }
         return this;
     },
 
