@@ -499,6 +499,7 @@ CompareView = Backbone.View.extend({
         }
         if ((country_id = el.attr("country_id"))) {
             this.sport.country = this.countries.get(country_id);
+            this.country = this.sport.country;
         }
         league_id = parseInt(el.attr('league_id'));
         this.create_league(league_id);
@@ -533,9 +534,9 @@ CompareView = Backbone.View.extend({
             calc = App.Formulas.formula_16(bets[0].odd, bets[1].odd, bets[2].odd).calc;
         } else {
             if (market.market_variations().length === 3) {
-                calc = App.Formulas.formula_2(bets[0].odd, bets[1].odd, bets[2].odd).calc;
+                calc = App.Formulas.formula_2.outcomes_1_2_3(bets[0].odd, bets[1].odd, bets[2].odd).calc;
             } else {
-                calc = App.Formulas.formula_1(bets[0].odd, bets[1].odd).calc;
+                calc = App.Formulas.formula_1.outcomes_1_2(bets[0].odd, bets[1].odd).calc;
             }
         }
         return _("%.2f").sprintf(100 + parseFloat(calc.percent));
@@ -553,7 +554,7 @@ CompareView = Backbone.View.extend({
         countries = link.parent().children('ul');
         if (countries.length == 0 && !link.hasClass('opened')) {
             $.get(App.host + "/api/v2/" + (this.sport.get('name')) + "/countries", function (data) {
-                _this.countries.reset(data.sport.country);
+                _this.countries.add(data.sport.country);
                 var countries_template = _.template($("#sidebar-countries-template").html());
                 countries = $(countries_template(data));
                 countries.css('display', 'none');
@@ -575,7 +576,7 @@ CompareView = Backbone.View.extend({
         this.sport = App.sports.get(sport_id);
         this.leagues.url = App.host + "/api/v2/" + (this.sport.get('name')) + "/leagues";
         $.get(App.host + "/api/v2/" + (this.sport.get('name')) + "/countries", function (data) {
-            _this.countries.reset(data.sport.country);
+            _this.countries.add(data.sport.country);
             if (callback == null) {
                 var sport_page = _.template($("#sport-template").html());
                 $("#content").html(sport_page(data));
