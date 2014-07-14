@@ -250,7 +250,7 @@ body {
       </li>
       <li>
         <a class='country_link' href="#" sport="<%= sport.get('name') %>" country_id="<%= country.id %>">
-          <%= I18n.t("countries." + (country.get('code') !== null ? country.get('code').toUpperCase() : country.get('name'))) %>
+          <%= I18n.t("countries." + (country.get('code') ? country.get('code').toUpperCase() : country.get('name'))) %>
         </a>
         &gt;
       </li>

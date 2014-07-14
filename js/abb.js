@@ -109,7 +109,12 @@ Routes = {
         if (App.access_token) {
             return "http://www.oddsfan.com/bets/" + bet.id + "?locale=en&access_token=" + App.access_token;
         } else {
-            return this.go_bookmaker_path(bet.bookmaker());
+            if($.type(bet.bookmaker)=="string"){
+                var bookmaker = App.bookmakers.findWhere({name: bet.bookmaker});
+                return this.go_bookmaker_path(bookmaker);
+            } else{
+                return this.go_bookmaker_path(bet.bookmaker());
+            }
         }
     },
 
