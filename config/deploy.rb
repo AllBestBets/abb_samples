@@ -14,6 +14,8 @@ set :format, :pretty
 set :log_level, :debug
 set :pty, true
 
+set :copy_exclude, %w(.git .gitignore config Capfile)
+
 set :ssh_options, {
     user: fetch(:user),
     keys: %w(~/.ssh/id_rsa),
