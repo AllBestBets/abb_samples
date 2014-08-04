@@ -1,11 +1,11 @@
 # config valid only for Capistrano 3.1
 lock '3.2.1'
 
-set :application, 'abb_samples'
+set :application, 'samples.allbestbets.ru'
 set :repo_url, 'git@github.com:AllBestBets/abb_samples.git'
 
 ask :branch, :master
-set :user, 'abb_samples'
+set :user, 'samples.allbestbets.ru'
 set :deploy_to, -> { "/home/#{fetch(:user)}" }
 set :keep_releases, 100
 set :scm, :git
