@@ -557,11 +557,13 @@ CalculatorView = Backbone.View.extend({
         var el, path, sel,
             _this = this;
         el = e.target;
-        sel = $(el).prev();
-        path = App.host + "/api/v1/bets/" + (sel.attr('id')) + "/same-pro" + (this.options.is_live ? '_live' : '') + "?access_token=" + this.options.access_token;
-        return $.get(path).done(function (data) {
-            return _this.same_bets_load(data, sel);
-        });
+        sel = $(el).parent().prev().find("select");
+        if (sel.attr('id')) {
+            path = App.host + "/api/v1/bets/" + (sel.attr('id')) + "/same-pro" + (this.options.is_live ? '_live' : '') + "?access_token=" + this.options.access_token;
+            return $.get(path).done(function (data) {
+                return _this.same_bets_load(data, sel);
+            });
+        }
     },
 
     same_bets_load: function (data, sel) {
@@ -602,16 +604,16 @@ CalculatorView = Backbone.View.extend({
         $("#outcome" + $(el).attr('number') + "_koef_lay").val(koef_lay);
         bookmaker_id = opt.attr('bookmaker_id');
         tr.find('.exclude_bet').attr('bet', opt.val());
-        if (bookmaker_rates[bookmaker_id]) {
-            $("#outcome" + $(el).attr("number") + "_currency").data("bookmaker_id", bookmaker_id);
-            $("#outcome" + $(el).attr("number") + "_currency").val(bookmaker_rates[bookmaker_id]);
-            $("#outcome" + $(el).attr("number") + "_rate").val(rates[bookmaker_rates[bookmaker_id]]);
-        }
-        if (bookmaker_commissions[bookmaker_id]) {
-            $("#outcome" + $(el).attr("number") + "_commission").val(bookmaker_commissions[bookmaker_id]);
-        } else {
+//        if (this.bookmaker_rates[bookmaker_id]) {
+//            $("#outcome" + $(el).attr("number") + "_currency").data("bookmaker_id", bookmaker_id);
+//            $("#outcome" + $(el).attr("number") + "_currency").val(bookmaker_rates[bookmaker_id]);
+//            $("#outcome" + $(el).attr("number") + "_rate").val(rates[bookmaker_rates[bookmaker_id]]);
+//        }
+//        if (this.bookmaker_commissions[bookmaker_id]) {
+//            $("#outcome" + $(el).attr("number") + "_commission").val(bookmaker_commissions[bookmaker_id]);
+//        } else {
             $("#outcome" + $(el).attr("number") + "_commission").val(0);
-        }
+//        }
         if (this.bookmaker_amounts[bookmaker_id] && parseFloat(this.bookmaker_amounts[bookmaker_id]) > 0) {
             $("#outcome" + $(el).attr("number") + "_stake_fix").attr("checked", "checked");
             $("#outcome" + $(el).attr("number") + "_stake").val(this.bookmaker_amounts[bookmaker_id]).change();
