@@ -1,4 +1,4 @@
-.results .icon {
+.row .icon {
     height: 37px;
     margin: 0 auto;
     text-indent: -9999px;
@@ -6,118 +6,118 @@
     background: url('../images/icons.png') no-repeat;
 }
 
-.results .icon-7 {
+.row .icon-7 {
     background-position: 0 0;
 }
 
-.results .icon-4 {
+.row .icon-4 {
     background-position: 0 0;
 }
 
-.results .icon-20 {
+.row .icon-20 {
     background-position: 0 0;
 }
 
-.results .icon-23 {
+.row .icon-23 {
     background-position: 0 0;
 }
 
-.results .icon-13 {
+.row .icon-13 {
     background-position: -40px 0;
 }
 
-.results .icon-9 {
+.row .icon-9 {
     background-position: -88px 0;
 }
 
-.results .icon-15 {
+.row .icon-15 {
     background-position: -136px 0;
 }
 
-.results .icon-14 {
+.row .icon-14 {
     background-position: -182px 0;
 }
 
-.results .icon-11 {
+.row .icon-11 {
     background-position: -226px 0;
 }
 
-.results .icon-16 {
+.row .icon-16 {
     background-position: -330px 0;
 }
 
-.results .icon-2 {
+.row .icon-2 {
     background-position: -387px 0;
 }
 
-.results .icon-1 {
+.row .icon-1 {
     background-position: -437px 0;
 }
 
-.results .icon-10 {
+.row .icon-10 {
     background-position: -544px 0;
 }
 
-.results .icon-8 {
+.row .icon-8 {
     background-position: -596px 0;
 }
 
-.results .icon-6 {
+.row .icon-6 {
     background-position: -658px 0;
 }
 
-.results .icon-17 {
+.row .icon-17 {
     background-position: -707px 0;
 }
 
-.results .icon-24 {
+.row .icon-24 {
     background-position: -763px 0;
 }
 
-.results .icon-19 {
+.row .icon-19 {
     background-position: -826px 0;
 }
 
-.results .icon-22 {
+.row .icon-22 {
     background-position: -878px 0;
 }
 
-.results .icon-12 {
+.row .icon-12 {
     background-position: -918px 0;
 }
 
-.results .icon-5 {
+.row .icon-5 {
     background-position: -966px 0;
 }
 
-.results .icon-29 {
+.row .icon-29 {
     background-position: -1019px 0;
 }
 
-.results .icon-30 {
+.row .icon-30 {
     background-position: -1068px 0;
 }
 
-.results .icon-27 {
+.row .icon-27 {
     background-position: -2000px 0;
 }
 
-.results .icon-28 {
+.row .icon-28 {
     background-position: -2000px 0;
 }
 
-.results .icon-21 {
+.row .icon-21 {
     background-position: -2000px 0;
 }
 
-.results .icon-26 {
+.row .icon-26 {
     background-position: -2000px 0;
 }
 
-.results .icon-25 {
+.row .icon-25 {
     background-position: -2000px 0;
 }
 
-.results .icon-18 {
+.row .icon-18 {
     background-position: -2000px 0;
 }
