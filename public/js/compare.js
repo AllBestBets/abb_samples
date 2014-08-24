@@ -670,6 +670,6 @@ $.ajax(App.host + '/api/v1/directories').done(function (response, status_code) {
     App.markets.reset(response.markets);
     App.market_variations.reset(response.market_variations);
 
-    App.compare_controller = new CompareView({el: $('.container-fluid')});
+    App.compare_controller = new CompareView({el: $('.container')});
     App.compare_controller.render();
 });
