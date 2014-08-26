@@ -265,17 +265,30 @@ body {
 
 
   <script type='text/template' id='markets-template'>
-    <div class="pager">
-      <ul>
-        <% markets.each( function(m) { %>
-          <li class="market" id="market_<%= m.id %>">
-            <a class="file" href="#" market_id="<%= m.id %>" title="<%= m.get('title') %>">
-              <%= I18n.t("markets." + m.get('short_title')) %>
-            </a>
-          </li>
+    <nav class="pager btn-toolbar">
+      <div class="btn-group">
+        <% _(main_markets).each( function(m) { %>
+          <a class="market file btn btn-primary" href="#" market_id="<%= m.id %>" title="<%= m.get('title') %>">
+            <%= I18n.t("markets." + m.get('short_title')) %>
+          </a>
         <% }) %>
-      </ul>
-    </div>
+        <% if(additional_markets) { %>
+          <button class="btn btn-primary more-markets">
+            <%= additional_markets.length + " рынков" %>
+            <span class="caret"></span>
+            <div class="additional-markets">
+              <div class="btn-group">
+                <% _(additional_markets).each( function(m) { %>
+                  <a class="market file btn btn-primary" href="#" market_id="<%= m.id %>" title="<%= m.get('title') %>">
+                    <%= I18n.t("markets." + m.get('short_title')) %>
+                  </a>
+                <% }) %>
+              </div>
+            </div>
+          </button>
+        <% } %>
+      </div>
+    </nav>
   </script>
 
   <script type='text/template' id='periods-template'>
@@ -346,7 +359,7 @@ body {
                     </tr>
                   </thead>
                   <tbody>
-                    <% _(_(values).keys().sort()).each(function (value) { %>
+                    <% _(_(_(values).keys()).sortBy(function(v){return parseFloat(v)})).each(function (value) { %>
                       <% bookmakers = values[value] %>
                       <% all_bookmakers = _(bookmakers).keys() %>
                       <tr>

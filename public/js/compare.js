@@ -16,6 +16,22 @@ App.Views.Markets = Backbone.View.extend({
         });
     },
 
+    main_markets : function() {
+        if (this.collection.length > 5) {
+            return this.collection.first(5);
+        } else {
+            return this.collection.toArray();
+        }
+    },
+
+    additional_markets : function() {
+        if (this.collection.length > 5) {
+            return this.collection.last(this.collection.length - 5);
+        } else {
+            return false;
+        }
+    },
+
     render: function () {
         this.market = this.collection.at(0);
         if (this.market == null) {
@@ -24,7 +40,8 @@ App.Views.Markets = Backbone.View.extend({
         }
         this.market.set('period', 0);
         this.$el.html(this.template({
-            markets: this.collection
+            main_markets: this.main_markets(),
+            additional_markets: this.additional_markets()
         }));
         $("#market_" + this.market.id).addClass('active');
         this.periods_view.setElement($(".filters .pager-select"));
@@ -228,17 +245,30 @@ App.Views.Bets = Backbone.View.extend({
         period = App.compare_controller.markets_view.periods_view ? App.compare_controller.markets_view.periods_view.period.get('identifier') : 0;
         if(market) {
             $.get(this.model.url() + ("/markets/" + market.id + "/periods/" + period + "/bets"), function (data) {
-                var all_bets;
+                var all_bets, event_outcomes;
                 data.market = market;
                 data.event = _this.model;
                 data.sort_variation || (data.sort_variation = market.market_variations()[0]);
+                if (data.sport.country) {
+                    event_outcomes = data.sport.country.league.event.market.period.outcome;
+                } else {
+                    event_outcomes = [];
+                }
+                event_outcomes = _(event_outcomes).filter(function(bets) {
+                    bets.bet = _(bets.bet).filter(function(bet) {
+                        return App.bookmakers.findWhere({
+                            name: bet.bookmaker
+                        });
+                    });
+                    return bets.bet.length > 0;
+                });
                 title_template = _.template($('#event-title-template').html())
                 $("#filters .title").html(title_template(data));
-                all_bets = _(data.sport.country.league.event.market.period.outcome).reduce(function (bets, o) {
-                    _(o.bet).max(function (b) {
+                all_bets = _(event_outcomes).reduce(function(bets, o) {
+                    _(o.bet).max(function(b) {
                         return b.odd;
                     }).best = true;
-                    return bets.concat(_(o.bet).map(function (b) {
+                    return bets.concat(_(o.bet).map(function(b) {
                         if ((o.value != null) && /(F2|EH2)/.test(o.variation)) {
                             b.value = -o.value;
                         } else {
@@ -249,19 +279,67 @@ App.Views.Bets = Backbone.View.extend({
                     }));
                 }, []);
                 data.values = {};
-                return _.chain(all_bets).groupBy('value').map(function (b, value) {
+                data.sorted_values = [];
+                _.chain(all_bets).groupBy('value').map(function(b, value) {
+                    var best_payout, bookmakers, market_variations;
                     if (value === 'null') {
                         value = null;
                     }
-                    if (/CS/.test(market.get('short_title'))) {
-                        value = _("%.1f").sprintf(parseFloat(value)).replace(/\./, ':');
-                    } else {
-                        value = _this.format_value(value);
-                    }
-                    data.values[value] = _.chain(b).groupBy('bookmaker').value();
-                    _this.data = data;
-                    return _this.render_view();
+                    value = _this.format_value(value);
+                    bookmakers = _.chain(b).groupBy('bookmaker').value();
+                    _(bookmakers).each(function(bets, bookmaker) {
+                        var clean_bets;
+                        clean_bets = _.chain(bets).groupBy('variation').map(function(bv) {
+                            return _.max(bv, function(bet) {
+                                return bet.odd;
+                            });
+                        });
+                        return bookmakers[bookmaker] = clean_bets.value();
+                    });
+                    data.values[value] = bookmakers;
+                    market_variations = [];
+                    best_payout = false;
+                    _(market.market_variations()).each(function(mv, i) {
+                        var best_bet, best_bookmaker;
+                        best_bookmaker = false;
+                        best_bet = false;
+                        _(bookmakers).each(function(bets, bookmaker) {
+                            var bet, bk, payout;
+                            bk = App.bookmakers.findWhere({
+                                original_name: bookmaker
+                            });
+                            if (!bk) {
+                                return;
+                            }
+                            bet = _(bets).find(function(b) {
+                                return b.variation === mv.variation();
+                            });
+                            if (bet && bet.best) {
+                                best_bookmaker = bk;
+                                best_bet = bet;
+                            }
+                            payout = App.compare_controller.payload(bets, market);
+                            if (payout !== '-' && (best_payout === false || parseFloat(payout) > parseFloat(best_payout))) {
+                                return best_payout = payout;
+                            }
+                        });
+                        return market_variations.push({
+                            best_bookmaker: best_bookmaker,
+                            best_bet: best_bet
+                        });
+                    });
+                    return data.sorted_values.push({
+                        value: value,
+                        group: bookmakers,
+                        best_payout: best_payout,
+                        market_variations: market_variations
+                    });
                 });
+                data.sorted_values = _.sortBy(data.sorted_values, function(v) {
+                    return parseFloat(v.value);
+                });
+                _this.data = data;
+                return _this.render_view();
             });
         }else{
             data = {};
@@ -422,6 +500,15 @@ App.Views.Events = Backbone.View.extend({
                 } else {
                     event_outcomes = [];
                 }
+                _(event_outcomes).each((function(_this) {
+                    return function(bets) {
+                        return bets.bet = _(bets.bet).filter(function(bet) {
+                            return App.bookmakers.findWhere({
+                                name: bet.bookmaker
+                            });
+                        });
+                    };
+                })(this));
                 most_outcomes = _(market.market_variations()).map(function (mv) {
                     var o, val, variation;
                     variation = mv.variation();
@@ -546,8 +633,8 @@ CompareView = Backbone.View.extend({
         if (bets.length !== market.market_variations().length) {
             return '-';
         }
-        if (market.get('short_title') === 'DC') {
-            calc = App.Formulas.formula_16(bets[0].odd, bets[1].odd, bets[2].odd).calc;
+        if (/DC$/.test(market.get('short_title'))) {
+            calc = App.Formulas.formula_16.outcomes_1_2_3(bets[0].odd, bets[1].odd, bets[2].odd).calc;
         } else {
             if (market.market_variations().length === 3) {
                 calc = App.Formulas.formula_2.outcomes_1_2_3(bets[0].odd, bets[1].odd, bets[2].odd).calc;

@@ -9,3 +9,24 @@ li i.flag {
 ul.countries, ul.leagues {
   list-style: none;
 }
+
+.more-markets{
+    position: static !important;
+}
+
+.more-markets .additional-markets {
+    display: none;
+    position: absolute;
+    left: 0px;
+    top: 34px;
+    z-index: 15;
+    width: 710px;
+    padding: 10px;
+    background-color: #3276b1;
+    border: 1px solid #285e8e;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.more-markets:hover .additional-markets {
+    display: block
+}
