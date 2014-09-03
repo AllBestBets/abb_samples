@@ -388,23 +388,23 @@ Routes = {
             if (this.get('swap_teams') && this.swap_market() && this.swap_market() !== this.market_variation()) {
                 if (bet_variation_name === 'CS' || bet_variation_name === 'CS_N' || bet_variation_name === 'SET_CS' || bet_variation_name === 'SET_CS_N') {
                     cs = bet_value.toFixed(1).toString().split(".");
-                    res = _(this.market_variation().i18n_short_title()).sprintf("" + cs[0] + ":" + cs[1]);
+                    res = _(this.market_variation().i18n_title()).sprintf("" + cs[0] + ":" + cs[1]);
                     if (display_full_desc) {
-                        title_res = I18n.t('global.from') + _(this.market_variation().i18n_short_title()).sprintf("" + cs[1] + ":" + cs[0]);
+                        title_res = I18n.t('global.from') + _(this.market_variation().i18n_title()).sprintf("" + cs[1] + ":" + cs[0]);
                     }
                 } else {
                     sub = "" + (bet_value > 0 && bet_variation_name.search('F') > -1 ? "+" : "") + bet_value;
-                    res = _(this.market_variation().i18n_short_title()).sprintf(sub);
+                    res = _(this.market_variation().i18n_title()).sprintf(sub);
                     if (display_full_desc) {
                         swap_name = this.swap_market().get('title');
                         sub = "" + (bet_value > 0 && swap_name.search('F') > -1 ? '+' : '') + bet_value;
-                        title_res = I18n.t('global.from') + " " + _(this.swap_market().i18n_short_title()).sprintf(sub);
+                        title_res = I18n.t('global.from') + " " + _(this.swap_market().i18n_title()).sprintf(sub);
                     }
                 }
             } else if (this.get('swap_teams') && bet_variation_name === 'EHX') {
-                res = _(this.market_variation().i18n_short_title()).sprintf("" + bet_value);
+                res = _(this.market_variation().i18n_title()).sprintf("" + bet_value);
                 if (display_full_desc) {
-                    title_res = I18n.t('global.from') + _(this.market_variation().i18n_short_title()).sprintf(bet_value);
+                    title_res = I18n.t('global.from') + _(this.market_variation().i18n_title()).sprintf(bet_value);
                 }
             } else {
                 sub = "" + (bet_value > 0 && bet_variation_name.search('F') > -1 ? '+' : '') + bet_value;
@@ -412,7 +412,7 @@ Routes = {
                     cs = bet_value.toFixed(1).toString().split(".");
                     sub = "" + cs[0] + ":" + cs[1];
                 }
-                res = _(this.market_variation().i18n_short_title()).sprintf(sub);
+                res = _(this.market_variation().i18n_title()).sprintf(sub);
             }
             if (this.get('is_lay') && display_full_desc) {
                 lay = App.Models.ArbFormulaOutcome.spreadable(this.bet_variation(), bet_value);
@@ -425,7 +425,7 @@ Routes = {
                     bet_value = "" + cs[0] + ":" + cs[1];
                 }
                 if (lay_variation != null) {
-                    title_res = ("(" + (I18n.t('bet.against'))) + ' ' + _(lay_variation.i18n_short_title()).sprintf(bet_value) + ")";
+                    title_res = ("(" + (I18n.t('bet.against'))) + ' ' + _(lay_variation.i18n_title()).sprintf(bet_value) + ")";
                 }
             }
             if (title_res) {
@@ -606,23 +606,23 @@ Routes = {
             if (this.get('swap_teams') && this.swap_market() && this.swap_market() !== this.market_variation()) {
                 if (bet_variation_name === 'CS' || bet_variation_name === 'CS_N' || bet_variation_name === 'SET_CS' || bet_variation_name === 'SET_CS_N') {
                     cs = bet_value.toFixed(1).toString().split(".");
-                    res = _(this.market_variation().i18n_short_title()).sprintf("" + cs[0] + ":" + cs[1]);
+                    res = _(this.market_variation().i18n_title()).sprintf("" + cs[0] + ":" + cs[1]);
                     if (display_full_desc) {
-                        title_res = I18n.t('global.from') + _(this.market_variation().i18n_short_title()).sprintf("" + cs[1] + ":" + cs[0]);
+                        title_res = I18n.t('global.from') + _(this.market_variation().i18n_title()).sprintf("" + cs[1] + ":" + cs[0]);
                     }
                 } else {
                     sub = "" + (bet_value > 0 && bet_variation_name.search('F') > -1 ? "+" : "") + bet_value;
-                    res = _(this.market_variation().i18n_short_title()).sprintf(sub);
+                    res = _(this.market_variation().i18n_title()).sprintf(sub);
                     if (display_full_desc) {
                         swap_name = this.swap_market().get('title');
                         sub = "" + (bet_value > 0 && swap_name.search('F') > -1 ? '+' : '') + bet_value;
-                        title_res = I18n.t('global.from') + " " + _(this.swap_market().i18n_short_title()).sprintf(sub);
+                        title_res = I18n.t('global.from') + " " + _(this.swap_market().i18n_title()).sprintf(sub);
                     }
                 }
             } else if (this.get('swap_teams') && bet_variation_name === 'EHX') {
-                res = _(this.market_variation().i18n_short_title()).sprintf("" + bet_value);
+                res = _(this.market_variation().i18n_title()).sprintf("" + bet_value);
                 if (display_full_desc) {
-                    title_res = I18n.t('global.from') + _(this.market_variation().i18n_short_title()).sprintf(bet_value);
+                    title_res = I18n.t('global.from') + _(this.market_variation().i18n_title()).sprintf(bet_value);
                 }
             } else {
                 sub = "" + (bet_value > 0 && bet_variation_name.search('F') > -1 ? '+' : '') + bet_value;
@@ -630,7 +630,7 @@ Routes = {
                     cs = bet_value.toFixed(1).toString().split(".");
                     sub = "" + cs[0] + ":" + cs[1];
                 }
-                res = _(this.market_variation().i18n_short_title()).sprintf(sub);
+                res = _(this.market_variation().i18n_title()).sprintf(sub);
             }
             if (this.get('is_lay') && display_full_desc) {
                 lay = App.Models.ArbFormulaOutcome.spreadable(this.bet_variation(), bet_value);
@@ -643,7 +643,7 @@ Routes = {
                     bet_value = "" + cs[0] + ":" + cs[1];
                 }
                 if (lay_variation != null) {
-                    title_res = ("(" + (I18n.t('bet.against'))) + ' ' + _(lay_variation.i18n_short_title()).sprintf(bet_value) + ")";
+                    title_res = ("(" + (I18n.t('bet.against'))) + ' ' + _(lay_variation.i18n_title()).sprintf(bet_value) + ")";
                 }
             }
             if (title_res) {
@@ -812,9 +812,6 @@ Routes = {
         },
         i18n_title: function () {
             return I18n.t("market_variation." + (this.get('title')));
-        },
-        i18n_short_title: function () {
-            return I18n.t("short_market_variation." + (this.get('title')));
         },
         swap: function () {
             return App.market_variations.get(this.get('swap_id'));
