@@ -163,7 +163,7 @@
           <div class="col-md-6"><input type="text" class="form-control input-sm" name='min_middle_value'></div>
           <div class="col-md-6"><input type="text" class="form-control input-sm" name='max_middle_value'></div>
       </div>
-      
+
       <span class=""><strong><%= I18n.t('arb.Events till') %></strong></span>
       <div class="row">
         <% date_shift = 7 * 24 * 60 %>
@@ -233,26 +233,24 @@
                       <h4 class="modal-title">Bookmakers <small>Select bookmakers you need</small></h4>
                   </div>
                   <div class="modal-body">
-                    <div class="pull-right">
-                      <%= I18n.t('global.All bookmakers') %>
-                      <input class='check-all' checked="checked" type="checkbox">
-                      </input>
-                    </div>
-                    <br/>
                     <ul class="nav nav-list" id="bookmakers_1">
+                        <li>
+                            <input class='check-all' checked="checked" type="checkbox">
+                            </input>
+                            <%= I18n.t('global.Check All') %>
+                        </li>
                     </ul>
                   </div>
                   <div class="modal-header">
                     <h4 class="modal-title">Required Bookmakers    <small>Bookmakers are participated in arbs</small></h4>
                   </div>
                   <div class="modal-body">
-                    <div class="pull-right">
-                      <%= I18n.t('global.All bookmakers') %>
-                      <input class='check-all' checked="checked" type="checkbox">
-                      </input>
-                    </div>
-                    <br/>
                     <ul class="nav nav-list" id="bookmakers_2">
+                        <li>
+                            <input class='check-all' checked="checked" type="checkbox">
+                            </input>
+                            <%= I18n.t('global.Check All') %>
+                        </li>
                     </ul>
                   </div>
                   <div class="modal-footer">
@@ -394,10 +392,15 @@
            <% compare_link = "/compare#sports/" + sport.id + "/countries/" + arb.get('country_id') + "/leagues/" + arb.get('league_id')+ "/events/" + arb.get('event_id') %>
            <% title = "xxx" %>
            <% } %>
-                
+
+          <% outcome_title = outcome.display_original_value() %>
+          <% if (m = outcome_title.match(/(.*)\s\-\s(.*)/)){ %>
+          <% display_value = m[1] + "<small class='black'> - <strong>" + m[2] + '</strong></small>' %>
+          <% } else { %>
+          <% display_value = outcome_title } %>
            <a href="<%= compare_link %>" target="_blank" title="<%= title %>">
-            <%= outcome.display_original_value() %>
-          </a>
+               <%= display_value %>
+           </a>
       </div>
       <div class="col-md-1 text-right">
 
@@ -467,7 +470,7 @@
                                     </span></button>
                                       <button type="button" class="btn btn-sm exclude_arb" title='<%= I18n.t('arb.Remove Arb') %>' arb='<%= arb.id %>'><span class="glyphicon glyphicon-trash"></span></button>
                                       <button type="button" class="btn btn-sm exclude_event" title='<%= I18n.t('arb.Delete event') %>' event='<%= arb.get('event_id') %>'><span class="glyphicon glyphicon-off"></span></button>
- 
+
                                       <% if (filter.grouped == true && filter.event_id == null) { %>
                                         <button data-event-id=<%= arb.get('event_id') %> type="button" class="btn btn-sm show-event-arbs" title="<%= _(I18n.t("arb.Show more arbs for %s")).sprintf(arb.get('event_name')) %>">
                                           <span class="glyphicon glyphicon-plus"></span>

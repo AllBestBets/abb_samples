@@ -186,7 +186,7 @@ ArbView = Backbone.View.extend({
         if ((arb == null) || (arb.bet1().bet_combination() == null)) {
             return false;
         }
-        this.simplepopup(this.calculator_url(arb), 770, 340);
+        this.simplepopup(this.calculator_url(arb), 1135, 340);
         return false;
     },
 
@@ -418,7 +418,7 @@ FilterView = Backbone.View.extend({
 
 var filter;
 
-$.ajax(App.host + '/api/v1/directories').done(function (response, status_code) {
+$.ajax(App.host + '/api/v1/directories?access_token=' + App.access_token).done(function (response, status_code) {
     App.sports.reset(response.sports);
     App.bookmakers.reset(response.bookmakers);
     App.periods.reset(response.periods);

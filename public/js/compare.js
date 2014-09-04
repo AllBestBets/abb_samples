@@ -750,7 +750,7 @@ CompareView = Backbone.View.extend({
 
 var compare;
 
-$.ajax(App.host + '/api/v1/directories').done(function (response, status_code) {
+$.ajax(App.host + '/api/v1/directories?access_token=' + App.access_token).done(function (response, status_code) {
     App.sports.reset(response.sports);
     App.bookmakers.reset(response.bookmakers);
     App.bet_variations.reset(response.bet_variations);

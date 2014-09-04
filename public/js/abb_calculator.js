@@ -395,10 +395,43 @@ CalculatorView = Backbone.View.extend({
         stake1 = $("#outcome1_stake").val() / rate1;
         stake2 = $("#outcome2_stake").val() / rate2;
         stake3 = $("#outcome3_stake").val() / rate3;
-        $("#revenue1").html((this.calc_formula.revenue_1(koef1, stake1, koef2, stake2, koef3, stake3, _total) * rate1).toFixed(2));
-        $("#revenue2").html((this.calc_formula.revenue_2(koef1, stake1, koef2, stake2, koef3, stake3, _total) * rate2).toFixed(2));
+
+        // matchbook commission on lose
+        var i, lose, matchbook_index, _i, _len, _ref;
+        lose = null;
+        matchbook_index = 0;
+
+        _ref = [1, 2, 3];
+        for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+            i = _ref[_i];
+            console.log($("tr[outcome=" + i + "] td.bookmaker select option:selected").attr('bookmaker_id'));
+            if ($("tr[outcome=" + i + "] td.bookmaker select option:selected").attr('bookmaker_id') == '31') {
+                matchbook_index = i;
+                lose = $("#outcome" + i + "_stake").val() / $("#outcome" + i + "_rate").val() * 0.01;
+            }
+        }
+
+        outcome1 = this.calc_formula.revenue_1(koef1, stake1, koef2, stake2, koef3, stake3, _total) * rate1
+        outcome2 = this.calc_formula.revenue_2(koef1, stake1, koef2, stake2, koef3, stake3, _total) * rate2
         if (this.calc_formula.revenue_3) {
-            return $("#revenue3").html((this.calc_formula.revenue_3(koef1, stake1, koef2, stake2, koef3, stake3, _total) * rate3).toFixed(2));
+            outcome3 = this.calc_formula.revenue_3(koef1, stake1, koef2, stake2, koef3, stake3, _total) * rate3
+        }
+
+        // matchbook commission on lose
+        if (lose && matchbook_index != 1) {
+            outcome1 = outcome1 - lose * rate1
+        }
+        if (lose && matchbook_index != 2) {
+            outcome2 = outcome2 - lose * rate2
+        }
+        if (this.calc_formula.revenue_3 && lose && matchbook_index != 3) {
+            outcome3 = outcome3 - lose * rate3
+        }
+
+        $("#revenue1").html(outcome1.toFixed(2));
+        $("#revenue2").html(outcome2.toFixed(2));
+        if (this.calc_formula.revenue_3) {
+            return $("#revenue3").html(outcome3.toFixed(2));
         }
     },
 
