@@ -381,6 +381,11 @@
       </div>
       <div class="col-md-6">
           <a href="<%= Routes.bet_path(outcome) %>" target="_blank" title="<%= _(I18n.t("arb.Fork for %s")).sprintf(outcome.event_display_name()) %>"><%= outcome.event_display_name() %></a>
+          <% period_name = I18n.t("bet." + App.Models.Bet.period_name_by_sport(outcome.period().get('identifier'), sport.id)) %>
+          <% period_title = I18n.t("bet." + App.Models.Bet.period_name_by_sport(outcome.period().get('identifier'), sport.id) + " title") %>
+          <% if (period_name != "") { %>
+          <small><strong title="Game period: <%= period_title %>">[<%= period_name %>]</strong></small>
+          <% } %>
           <br/>
           <small class="text-muted"><%= outcome.get('league') %></small>
       </div>
