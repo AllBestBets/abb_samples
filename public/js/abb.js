@@ -19,14 +19,14 @@ desktop_notif = function (href, title, text) {
                 notification.close();
             }), 3000);
         };
-        if(href) {
+        if (href) {
             notification.onclick = function (x) {
                 simplepopup(href, 950, 450);
             };
         }
     }
     else if (Notification.permission !== 'denied') {
-        RequestPermission(function(){
+        RequestPermission(function () {
             desktop_notif(href, title, text);
         });
     }
@@ -110,10 +110,10 @@ Routes = {
         if (App.access_token) {
             return "http://www.oddsfan.com/bets/" + bet.id + "?locale=en&access_token=" + App.access_token;
         } else {
-            if($.type(bet.bookmaker)=="string"){
+            if ($.type(bet.bookmaker) == "string") {
                 var bookmaker = App.bookmakers.findWhere({name: bet.bookmaker});
                 return this.go_bookmaker_path(bookmaker);
-            } else{
+            } else {
                 return this.go_bookmaker_path(bet.bookmaker());
             }
         }
@@ -312,7 +312,6 @@ Routes = {
 }).call(this);
 (function () {
     App.Models.Bet = Backbone.Model.extend({
-
         initialize: function () {
             var commission, koef, koef_commissed;
             koef = this.get('koef');
@@ -337,22 +336,30 @@ Routes = {
             return false;
         },
         print_koef: function () {
+            var a, aux, b, h1, h2, k1, k2, tolerance;
             if (this.get('koef')) {
-                if (App.fractional){
-                    var tolerance = 1.0E-6;
-                    var h1=1; var h2=0;
-                    var k1=0; var k2=1;
-                    var b = this.get('koef');
-                    do {
-                        var a = Math.floor(b);
-                        var aux = h1; h1 = a*h1+h2; h2 = aux;
-                        aux = k1; k1 = a*k1+k2; k2 = aux;
-                        b = 1/(b-a);
-                    } while (Math.abs(this.get('koef')-h1/k1) > this.get('koef')*tolerance);
-
-                    return h1+"/"+k1;
-                }
-                else {
+                if (App.fractional) {
+                    tolerance = 1.0e-6;
+                    h1 = 1;
+                    h2 = 0;
+                    k1 = 0;
+                    k2 = 1;
+                    b = this.get("koef");
+                    while (true) {
+                        a = Math.floor(b);
+                        aux = h1;
+                        h1 = a * h1 + h2;
+                        h2 = aux;
+                        aux = k1;
+                        k1 = a * k1 + k2;
+                        k2 = aux;
+                        b = 1 / (b - a);
+                        if (!(Math.abs(this.get("koef") - h1 / k1) > this.get("koef") * tolerance)) {
+                            break;
+                        }
+                    }
+                    return h1 + "/" + k1;
+                } else {
                     return _("%.2f").sprintf(this.get('koef'));
                 }
             } else {
@@ -360,7 +367,15 @@ Routes = {
             }
         },
         bookmaker: function () {
-            return this._bookmaker || (this._bookmaker = App.bookmakers.get(this.get('bookmaker_id')));
+            var bk;
+            if (!this._bookmaker) {
+                bk = App.bookmakers.get(this.get('bookmaker_id'));
+                this._bookmaker = bk ? bk.get('bookmaker_clone') || bk || null : void 0;
+            }
+            if (!this._bookmaker) {
+                console.log("dont find bookmaker with id " + (this.get('bookmaker_id')));
+            }
+            return this._bookmaker;
         },
         period: function () {
             return this._period || (this._period = App.periods.get(this.get('period_id')));
@@ -378,6 +393,16 @@ Routes = {
                 return 0;
             }
         },
+        market: function () {
+            return this._market || (this._market = App.markets.get(this.market_id()) ? App.markets.get(this.market_id()) : null);
+        },
+        arbTypeId: function () {
+            if (this.market()) {
+                return this.market().get('arb_type_id');
+            } else {
+                return null;
+            }
+        },
         swap_market: function () {
             return this._swap_market || (this._swap_market = this.market_variation().swap());
         },
@@ -391,9 +416,23 @@ Routes = {
                 return "" + (this.get('home')) + " - " + (this.get('away'));
             }
         },
-
+        most_percent: function () {
+            return this.get('most_percent');
+        },
+        most_percent_color: function () {
+            if (!this.get('most_percent')) {
+                return '';
+            }
+            if (this.get('most_percent') > 0.05) {
+                return 'red';
+            } else if (this.get('most_percent') >= 0.02) {
+                return 'green';
+            } else {
+                return '';
+            }
+        },
         display_original_value: function (display_full_desc) {
-            var bet_value, bet_variation_name, cs, html, lay, lay_variation, res, sub, swap_name, title_res;
+            var bet_value, bet_variation_name, cs, html, lay, lay_variation, res, sub, swap_name, title_res, _v;
             if (display_full_desc == null) {
                 display_full_desc = true;
             }
@@ -428,6 +467,22 @@ Routes = {
                 if (bet_variation_name === 'CS' || bet_variation_name === 'CS_N' || bet_variation_name === 'SET_CS' || bet_variation_name === 'SET_CS_N') {
                     cs = bet_value.toFixed(1).toString().split(".");
                     sub = "" + cs[0] + ":" + cs[1];
+                }
+                if (bet_variation_name === 'EG' || bet_variation_name === 'EG_N') {
+                    if (parseFloat(bet_value) === 0) {
+                        sub = 0;
+                    } else {
+                        _v = bet_value.toString().split(".");
+                        if (_v[0] === _v[1]) {
+                            _v[1] = '';
+                        }
+                        if (isNaN(_v[1])) {
+                            _v[1] = 0;
+                        }
+                        sub = _v[0] + "-" + _v[1];
+                        sub = sub.replace(/\-0/, '');
+                        sub = sub.replace(/\-$/, '+');
+                    }
                 }
                 res = _(this.market_variation().i18n_title()).sprintf(sub);
             }
@@ -500,6 +555,8 @@ Routes = {
                         case 12:
                         case 13:
                         case 14:
+                        case 21:
+                        case 29:
                             if (with_regular_time) {
                                 return "match";
                             } else {
@@ -518,9 +575,9 @@ Routes = {
                 case -10:
                 case -7:
                     if (with_regular_time) {
-                        return "match";
+                        return 'match';
                     } else {
-                        return "no_desc";
+                        return 'no_desc';
                     }
                     break;
                 case -18:
@@ -528,13 +585,13 @@ Routes = {
                 case -12:
                 case -9:
                 case -6:
-                    return "1 time";
+                    return '1 time';
                 case -17:
                 case -14:
                 case -11:
                 case -8:
                 case -5:
-                    return "2 time";
+                    return '2 time';
                 case -100:
                     return "next round";
                 default:
