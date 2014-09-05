@@ -48,7 +48,7 @@ App = {
     arrow_interval: 600,
     access_token: "",
     api_token: "",
-    fractional: true,
+    fractional: false,
     host: "https://www.allbestbets.ru",
     timezone_offset: function () {
         return (new Date()).getTimezoneOffset() * 60 * 1000;
