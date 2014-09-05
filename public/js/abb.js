@@ -48,6 +48,7 @@ App = {
     arrow_interval: 600,
     access_token: "",
     api_token: "",
+    fractional: true,
     host: "https://www.allbestbets.ru",
     timezone_offset: function () {
         return (new Date()).getTimezoneOffset() * 60 * 1000;
@@ -337,7 +338,23 @@ Routes = {
         },
         print_koef: function () {
             if (this.get('koef')) {
-                return _("%.2f").sprintf(this.get('koef'));
+                if (App.fractional){
+                    var tolerance = 1.0E-6;
+                    var h1=1; var h2=0;
+                    var k1=0; var k2=1;
+                    var b = this.get('koef');
+                    do {
+                        var a = Math.floor(b);
+                        var aux = h1; h1 = a*h1+h2; h2 = aux;
+                        aux = k1; k1 = a*k1+k2; k2 = aux;
+                        b = 1/(b-a);
+                    } while (Math.abs(this.get('koef')-h1/k1) > this.get('koef')*tolerance);
+
+                    return h1+"/"+k1;
+                }
+                else {
+                    return _("%.2f").sprintf(this.get('koef'));
+                }
             } else {
                 return 'XXX';
             }
