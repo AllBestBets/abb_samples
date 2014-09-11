@@ -609,7 +609,7 @@ CalculatorView = Backbone.View.extend({
         _fn = function (bet) {
             var bookmaker, option;
             bookmaker = App.bookmakers.get(bet.bookmaker_id);
-            option = $("<option></option>").attr("value", bet.id).attr("bc_id", bet.bc_id).attr('bookmaker_id', bet.bookmaker_id).attr('bookmaker_event_name', bet.bookmaker_event_name).attr('bookmaker_league_name', bet.bookmaker_league_name).attr('koef', bet.koef).text(bookmaker.get('name') + ': ' + bet.koef + ' (' + bet.arbs + ')');
+            option = $("<option></option>").attr("value", bet.id).attr("bc_id", bet.bc_id).attr('bookmaker_id', bet.bookmaker_id).attr('bookmaker_event_name', bet.bookmaker_event_name).attr('bookmaker_league_name', bet.bookmaker_league_name).attr('koef', bet.koef).attr('commission', bet.commission).text(bookmaker.get('name') + ': ' + bet.koef + ' (' + bet.arbs + ')');
             if (bet.id === selected_option) {
                 option.attr('selected', 'selected');
             }
@@ -645,7 +645,7 @@ CalculatorView = Backbone.View.extend({
 //        if (this.bookmaker_commissions[bookmaker_id]) {
 //            $("#outcome" + $(el).attr("number") + "_commission").val(bookmaker_commissions[bookmaker_id]);
 //        } else {
-            $("#outcome" + $(el).attr("number") + "_commission").val(0);
+            $("#outcome" + $(el).attr("number") + "_commission").val(opt.attr('commission'));
 //        }
         if (this.bookmaker_amounts[bookmaker_id] && parseFloat(this.bookmaker_amounts[bookmaker_id]) > 0) {
             $("#outcome" + $(el).attr("number") + "_stake_fix").attr("checked", "checked");
