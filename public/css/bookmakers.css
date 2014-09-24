@@ -168,7 +168,7 @@
 }
 
 /* line 43, app/assets/stylesheets/base/bookmakers.css.scss */
-.results.content-box table a.b34 {
+.results.content-box table a.bc20 {
     background-position: 0 -861px;
 }
 
@@ -198,7 +198,7 @@
 }
 
 /* line 49, app/assets/stylesheets/base/bookmakers.css.scss */
-.results.content-box table a.bc20 {
+.results.content-box table a.b34 {
     background-position: 0 -1011px;
 }
 
@@ -709,4 +709,7 @@
 }
 .results.content-box table a.b78 {
     background-position: 0 -3128px;
+}
+.results.content-box table a.bc64 {
+    background-position: 0 -3144px;
 }
