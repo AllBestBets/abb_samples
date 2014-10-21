@@ -719,3 +719,35 @@
 .results.content-box table a.bc65 {
     background-position: 0 -37px;
 }
+.results.content-box table a.b80 {
+    background-position: 0 -3160px;
+}
+
+/* line 175, ../../app/assets/stylesheets/bookmakers.css.scss */
+#tab-bookmakers table .bc66, #tab-bookmaker-clones table .bc66, #tab-accounting table .bc66, .results .bc66 {
+    background-position: 0 -3208px;
+}
+/* line 176, ../../app/assets/stylesheets/bookmakers.css.scss */
+#tab-bookmakers table .bc67, #tab-bookmaker-clones table .bc67, #tab-accounting table .bc67, .results .bc67 {
+    background-position: 0 -3256px;
+}
+/* line 177, ../../app/assets/stylesheets/bookmakers.css.scss */
+#tab-bookmakers table .bc68, #tab-bookmaker-clones table .bc68, #tab-accounting table .bc68, .results .bc68 {
+    background-position: 0 -3240px;
+}
+/* line 178, ../../app/assets/stylesheets/bookmakers.css.scss */
+#tab-bookmakers table .bc69, #tab-bookmaker-clones table .bc69, #tab-accounting table .bc69, .results .bc69 {
+    background-position: 0 -3192px;
+}
+/* line 179, ../../app/assets/stylesheets/bookmakers.css.scss */
+#tab-bookmakers table .bc70, #tab-bookmaker-clones table .bc70, #tab-accounting table .bc70, .results .bc70 {
+    background-position: 0 -3224px;
+}
+/* line 180, ../../app/assets/stylesheets/bookmakers.css.scss */
+#tab-bookmakers table .bc71, #tab-bookmaker-clones table .bc71, #tab-accounting table .bc71, .results .bc71 {
+    background-position: 0 -680px;
+}
+/* line 181, ../../app/assets/stylesheets/bookmakers.css.scss */
+#tab-bookmakers table .bc72, #tab-bookmaker-clones table .bc72, #tab-accounting table .bc72, .results .bc72 {
+    background-position: 0 -680px;
+}
