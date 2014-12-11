@@ -408,6 +408,13 @@ CalculatorView = Backbone.View.extend({
             if ($("tr[outcome=" + i + "] td.bookmaker select option:selected").attr('bookmaker_id') == '31') {
                 matchbook_index = i;
                 lose = $("#outcome" + i + "_stake").val() / $("#outcome" + i + "_rate").val() * 0.01;
+                if( $("#outcome" + i + "_koef").val() > 2) {
+                  lose = $("#outcome" + i + "_stake").val() / $("#outcome" + i + "_rate").val() * 0.01
+                }else {
+                  lose = ($("#outcome" + i + "_koef").val() - 1) * $("#outcome" + i + "_stake").val() / $("#outcome" + i + "_rate").val() * 0.01
+                }
+
+
             }
         }
 
@@ -416,6 +423,38 @@ CalculatorView = Backbone.View.extend({
         if (this.calc_formula.revenue_3) {
             outcome3 = this.calc_formula.revenue_3(koef1, stake1, koef2, stake2, koef3, stake3, _total) * rate3
         }
+
+        if(lose) {
+          if($('#matchbook').val() == '0' && !this.calc_formula.revenue_3 && $('#outcome1_updated').val() == '1' && $('#outcome2_updated').val() == '1') {
+            if (matchbook_index == 1) {
+              p1 = (parseFloat($("#outcome1_stake").val()) / parseFloat($("#outcome1_rate").val())) / ((parseFloat($("#outcome2_stake").val()) / parseFloat($("#outcome2_rate").val())) + lose / koef2)
+            } else {
+              p1 = ((parseFloat($("#outcome1_stake").val()) / parseFloat($("#outcome1_rate").val())) + lose / koef1) / (parseFloat($("#outcome2_stake").val()) / parseFloat($("#outcome2_rate").val()))
+            }
+            p1 = 1 / (1 + p1)
+            p2 = 1 - p1
+
+            $("#outcome1_stake_percent").val(p2)
+            $("#outcome2_stake_percent").val(p1)
+            $('#matchbook').val(1)
+            return this.calculate()
+          }
+
+          if(matchbook_index != 1){
+            outcome1 = outcome1 - lose * rate1
+          }
+          if(matchbook_index != 2){
+            outcome2 = outcome2 - lose * rate2
+          }
+          if(this.calc_formula.revenue_3 && matchbook_index != 3){
+            outcome3 = outcome3 - lose * rate3
+          }
+
+
+          $('#percent').val(this.round(100 * (outcome2 / rate2) / _total))
+          $('#percent_display').html(this.round(100 * (outcome2 / rate2) / _total) + ' %')
+        }
+
 
         // matchbook commission on lose
         if (lose && matchbook_index != 1) {
@@ -531,6 +570,7 @@ CalculatorView = Backbone.View.extend({
     },
 
     reload_formula: function () {
+        $('#matchbook').val(0);
         var data, formula, koef1, koef2, koef3;
         koef1 = App.Formulas.koef_kommissed($("#outcome1_koef").val(), $("#outcome1_commission").val());
         koef2 = App.Formulas.koef_kommissed($("#outcome2_koef").val(), $("#outcome2_commission").val());
@@ -669,6 +709,7 @@ CalculatorView = Backbone.View.extend({
             $("#total_stake").val(this.bookmaker_amounts['0']).change();
             this.calculate();
         }
+        $("#outcome" + $(el).attr('number') + "_updated").val(1)
         return this.reload_formula();
     },
 

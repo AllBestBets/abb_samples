@@ -38,6 +38,7 @@
     <script type='text/template' id='calculator-template'>
       <input id="formula" name="formula" type="hidden" value="<%= arb.arb_formula().get('calc_formula') %>"></input>
       <input id="percent" name="percent" type="hidden" value="<%= calc.percent %>"></input>
+      <input id="matchbook" type="hidden" value=0></input>
 
         <div class="head">
           <h2 class="pull-right text-success">
@@ -248,7 +249,7 @@
       <td>
         <input class='radio' type='radio' name='stake_fix' value="<%= pos %>" id="outcome<%= pos %>_stake_fix"></input>
         <input type='hidden' name="outcome<%= pos %>_stake_percent" id="outcome<%= pos %>_stake_percent" value="<%= calc.stakes[pos-1] %>"></input>
-
+        <input type='hidden' name="outcome<%= pos %>_updated" id="outcome<%= pos %>_updated" value=0 ></input>
         <input class='distr' type='checkbox' name='outcome<%= pos %>_stake_distr' value="<%= pos %>" id="outcome<%= pos %>_stake_distr" checked='checked'></input>
       </td>
       <td>
