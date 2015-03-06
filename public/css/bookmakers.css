@@ -293,7 +293,7 @@
 
 /* line 68, app/assets/stylesheets/base/bookmakers.css.scss */
 .results.content-box table a.b43 {
-    background-position: 0 -3384px;
+    background-position: 0 -1487px;
 }
 
 /* line 69, app/assets/stylesheets/base/bookmakers.css.scss */
@@ -772,4 +772,7 @@
 }
 #tab-bookmakers table .b87, #tab-bookmaker-clones table .b87, #tab-accounting table .b87, .results .b87 {
     background-position: 0 -3368px;
+}
+.results.content-box table a.b88, #tab-bookmaker-clones table .b88, #tab-accounting table .b88, .results .b88 {
+    background-position: 0 -3384px;
 }
