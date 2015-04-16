@@ -6,7 +6,7 @@ set :repo_url, 'git@github.com:AllBestBets/abb_samples.git'
 
 ask :branch, :master
 set :user, 'samples.allbestbets.ru'
-set :deploy_to, -> { "/home/#{fetch(:user)}" }
+set :deploy_to, -> { "/var/www/#{fetch(:user)}" }
 set :keep_releases, 100
 set :scm, :git
 
