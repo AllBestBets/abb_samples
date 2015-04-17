@@ -49,7 +49,7 @@ App = {
     access_token: "",
     api_token: "",
     fractional: false,
-    host: "https://www.allbestbets.ru",
+    host: "data.php?url=",
     timezone_offset: function () {
         return (new Date()).getTimezoneOffset() * 60 * 1000;
     },
