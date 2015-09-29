@@ -300,8 +300,7 @@ Routes = {
 
 }).call(this);
 (function () {
-    App.Models.WrongItem = Backbone.Model.extend({
-    });
+    App.Models.WrongItem = Backbone.Model.extend({});
 
     App.Collections.WrongItems = Backbone.Collection.extend({
         model: App.Models.WrongItem
@@ -410,10 +409,14 @@ Routes = {
             return this._bet_variation || (this._bet_variation = this.bet_combination() ? this.bet_combination().bet_variation() : null);
         },
         event_display_name: function () {
-            if (this.get('swap_teams')) {
-                return "" + (this.get('away')) + " ↔ " + (this.get('home'));
+            if (this.get('home') && this.get('away')) {
+                if (this.get('swap_teams')) {
+                    return "" + (this.get('away')) + " ↔ " + (this.get('home'));
+                } else {
+                    return "" + (this.get('home')) + " - " + (this.get('away'));
+                }
             } else {
-                return "" + (this.get('home')) + " - " + (this.get('away'));
+                return "[Event is hidden, upgrade your account please]"
             }
         },
         most_percent: function () {
@@ -863,8 +866,8 @@ Routes = {
     App.Models.Market = Backbone.Model.extend({
         market_variations: function () {
             return this.variations || (this.variations = App.market_variations.where({
-                market_id: this.id
-            }));
+                    market_id: this.id
+                }));
         }
     });
 
