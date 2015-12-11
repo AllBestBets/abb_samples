@@ -601,6 +601,8 @@ Routes = {
                     switch (sport_id) {
                         case 11:
                             return "" + period + " frame";
+                        case 21:
+                            return "" + period + " map";
                         case 8:
                         case 9:
                         case 13:
