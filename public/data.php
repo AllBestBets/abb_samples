@@ -143,7 +143,7 @@ $valid_url_regex = '/.*/';
 // ############################################################################
 
 
-$url = 'https://api-pr-stg.betburger.com/' . $_GET['url'];
+$url = 'https://api-pr.allbestbets.ru/' . $_GET['url'];
 if (preg_match("/\?/", $_GET['url'])){
     $url .= '&skip_bk_ids=10';
 }else {

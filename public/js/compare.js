@@ -45,7 +45,7 @@ App.Views.Markets = Backbone.View.extend({
         }));
         $("#market_" + this.market.id).addClass('active');
         this.periods_view.setElement($(".filters .pager-select"));
-        this.periods.url = this.market.url() + '/periods';
+        this.periods.url = this.market.url().replace('?access_token='+App.access_token, '') + '/periods?access_token=' + App.access_token;
         this.periods.fetch();
         return this;
     },
@@ -65,7 +65,7 @@ App.Views.Markets = Backbone.View.extend({
             if (callback) {
                 this.periods.once('reset', callback, this);
             }
-            this.periods.url = this.market.url() + '/periods';
+            this.periods.url = this.market.url().replace('?access_token='+App.access_token, '') + '/periods?access_token=' + App.access_token;
             return this.periods.fetch();
         }
     }
@@ -207,7 +207,7 @@ App.Views.Event = Backbone.View.extend({
     initialize: function () {
         var _this = this;
         this.markets = new App.Collections.Markets();
-        this.markets.url = this.model.url() + '/markets';
+        this.markets.url = this.model.url().replace('?access_token='+App.access_token, '') + '/markets?access_token=' + App.access_token;
         this.markets.on('reset', function () {
             return App.compare_controller.market = _this.markets.at(0);
         });
@@ -244,7 +244,7 @@ App.Views.Bets = Backbone.View.extend({
         market = App.compare_controller.markets_view.market;
         period = App.compare_controller.markets_view.periods_view ? App.compare_controller.markets_view.periods_view.period.get('identifier') : 0;
         if(market) {
-            $.get(this.model.url() + ("/markets/" + market.id + "/periods/" + period + "/bets"), function (data) {
+            $.get(this.model.url().replace('?access_token='+App.access_token, '') + ("/markets/" + market.id + "/periods/" + period + "/bets?access_token=" + App.access_token), function (data) {
                 var all_bets, event_outcomes;
                 data.market = market;
                 data.event = _this.model;
@@ -450,8 +450,8 @@ LeagueView = Backbone.View.extend({
     },
 
     render: function () {
-        this.markets.url = this.model.url() + '/markets';
-        this.league_events.url = this.model.url() + '/events';
+        this.markets.url = this.model.url() + '/markets?access_token=' + App.access_token;
+        this.league_events.url = this.model.url() + '/events?access_token=' + App.access_token;
         this.$el.html(this.template());
         //$(".sel").customSelect();
         this.events_view.setElement($("#filters .results-container"));
@@ -493,7 +493,7 @@ App.Views.Events = Backbone.View.extend({
         market = App.compare_controller.markets_view.market;
         period = App.compare_controller.markets_view.periods_view ? (App.compare_controller.markets_view.periods_view.values_view ? value = parseFloat(App.compare_controller.markets_view.periods_view.values_view.value) : void 0, App.compare_controller.markets_view.periods_view.period.get('identifier')) : 0;
         this.collection.each(function (event) {
-            return $.get(App.host + "/api/v2/" + sport.name + "/events/" + event.id + "/markets/" + market.id + "/periods/" + period + "/bets", function (data) {
+            return $.get(App.host + "/api/v2/" + sport.name + "/events/" + event.id + "/markets/" + market.id + "/periods/" + period + "/bets?access_token=" + App.access_token, function (data) {
                 var event_outcomes, most_outcomes, percent;
                 if (data.sport.country) {
                     event_outcomes = data.sport.country.league.event.market.period.outcome;
@@ -652,11 +652,11 @@ CompareView = Backbone.View.extend({
         link = $(el);
         sport_id = $(el).attr("sport_id");
         this.sport = App.sports.get(sport_id);
-        this.leagues.url = App.host + "/api/v2/" + (this.sport.get('name')) + "/leagues";
+        this.leagues.url = App.host + "/api/v2/" + (this.sport.get('name')) + "/leagues?access_token=" + App.access_token;
 
         countries = link.parent().children('ul');
         if (countries.length == 0 && !link.hasClass('opened')) {
-            $.get(App.host + "/api/v2/" + (this.sport.get('name')) + "/countries", function (data) {
+            $.get(App.host + "/api/v2/" + (this.sport.get('name')) + "/countries?access_token=" + App.access_token, function (data) {
                 _this.countries.add(data.sport.country);
                 var countries_template = _.template($("#sidebar-countries-template").html());
                 countries = $(countries_template(data));
@@ -677,14 +677,14 @@ CompareView = Backbone.View.extend({
             _this = this;
         sport_id = $(el).attr("sport_id");
         this.sport = App.sports.get(sport_id);
-        this.leagues.url = App.host + "/api/v2/" + (this.sport.get('name')) + "/leagues";
+        this.leagues.url = App.host + "/api/v2/" + (this.sport.get('name')) + "/leagues?access_token=" + App.access_token;
         $.get(App.host + "/api/v2/" + (this.sport.get('name')) + "/countries", function (data) {
             _this.countries.add(data.sport.country);
             if (callback == null) {
                 var sport_page = _.template($("#sport-template").html());
                 $("#content").html(sport_page(data));
                 _this.countries.each(function (c) {
-                    return $.get(App.host + "/api/v2/" + (_this.sport.get('name')) + "/countries/" + c.id + "/leagues", function (data) {
+                    return $.get(App.host + "/api/v2/" + (_this.sport.get('name')) + "/countries/" + c.id + "/leagues?access_token=" + App.access_token, function (data) {
                         _this.leagues.add(data.sport.country.league);
                         var sport_leagues_page = _.template($("#sport-leagues-template").html());
                         return $("#country_" + c.id + " .sport_leagues").html(sport_leagues_page(data));
@@ -709,7 +709,7 @@ CompareView = Backbone.View.extend({
 
         leagues = link.parent().children('ul');
         if (leagues.length == 0 && !link.hasClass('opened')) {
-            $.get(App.host + "/api/v2/" + ($(el).attr("sport")) + "/countries/" + ($(el).attr("country_id")) + "/leagues", function (data) {
+            $.get(App.host + "/api/v2/" + ($(el).attr("sport")) + "/countries/" + ($(el).attr("country_id")) + "/leagues?access_token=" + App.access_token, function (data) {
                 _this.leagues.add(data.sport.country.league);
                 var leagues_template = _.template($("#sidebar-leagues-template").html());
                 leagues = $(leagues_template(data));
@@ -734,7 +734,7 @@ CompareView = Backbone.View.extend({
         country_id = $(el).attr("country_id") || $.url().param('country_id');
         this.country = this.countries.get(country_id);
         this.sport.country = this.country;
-        $.get(App.host + "/api/v2/" + (this.sport.get('name')) + "/countries/" + country_id + "/leagues", function (data) {
+        $.get(App.host + "/api/v2/" + (this.sport.get('name')) + "/countries/" + country_id + "/leagues?access_token=" + App.access_token, function (data) {
             _this.leagues.add(data.sport.country.league);
             if (callback == null) {
 
