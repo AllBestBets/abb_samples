@@ -16,7 +16,7 @@ $.ajax(App.host + '/api/v1/directories?access_token=' + App.access_token).done(f
     App.market_variations.reset(response.market_variations);
     App.currencies.reset(response.currencies);
 
-    var arb_json = JSON.parse(window.location.hash.replace(/#/, ''));
+    var arb_json = JSON.parse(decodeURI(window.location.hash.replace(/#/, '')));
     arb = new App.Models.Arb({id: arb_json.id});
     calc = new CalculatorView({model: arb, el: $('.calculator'), access_token: App.access_token, is_live: false});
     arb.set(arb.parse(arb_json));
